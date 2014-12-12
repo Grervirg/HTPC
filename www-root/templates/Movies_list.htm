@@ -1,0 +1,1251 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<title>{$pagetitle}</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+		<!--[if IE]>
+			<link REL="stylesheet" href="styles/defaultIE.css" type="text/css">
+			{BEGIN IEcssFiles}
+			<link REL="stylesheet" href="{$stylepathIE}" type="text/css">
+			{END IEcssFiles}
+		<![endif]-->
+	</head>
+	
+	<body class="{$stylename}" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<table   cellpadding="0" class="runner-toptable">
+			<tr class="runner-header">
+				<td class="runner-top" colspan=3>
+					
+
+
+
+{BEGIN container_toplinks}
+<table class="runner-c runner-c-toplinks" cellpadding="0" >
+<tr class="{$cheaderclass_toplinks}">
+<td class="runner-cl"><img src="images/spacer.gif"></td>
+<td class="runner-cc"></td><td class="runner-cr"><img src="images/spacer.gif"></td>
+</tr>
+<tr class="runner-row style1">
+<td class="runner-cl"></td>
+<td class="runner-cc">
+<table border="0" cellpadding="0" class="runner-hc">
+<tr>
+
+{BEGIN security_block}
+<td  class="runner-cc runner-bl runner-b-loggedas" {$brickclass_loggedas}><span>{BEGIN loggedas_message} 
+<span>Logged on as&nbsp;<b>{$username}</b>&nbsp;</span> 
+{END loggedas_message}
+{BEGIN guestloginbutton}
+<span class="runner-btnframe">
+<span class="runner-btnleft"></span>
+<span class="runner-btnright"></span>
+<a href="#" class="runner-button" {$guestloginlink_attrs}>Login</a>
+</span>
+{END guestloginbutton}
+{BEGIN logoutbutton}
+<span class="runner-btnframe">
+<span class="runner-btnleft"></span>
+<span class="runner-btnright"></span>
+<a href="#" class="runner-button" {$logoutlink_attrs}>Log out</a>
+</span>
+{END logoutbutton}
+
+</span></td>
+{END security_block}
+
+
+{BEGIN prints_block}
+<td  class="runner-cc runner-bl runner-b-toplinks_print" {$brickclass_toplinks_print}><span>{BEGIN print_link}
+	<span class="runner-btnframe">
+	<span class="runner-btnleft"></span>
+	<span class="runner-btnright"></span>
+	<a href="#" class="runner-button" {$printlink_attrs}>Print this page</a>
+	</span>
+{END print_link}
+
+{BEGIN printall_link}
+	<span class="runner-btnframe">
+	<span class="runner-btnleft"></span>
+	<span class="runner-btnright"></span>
+	<a href="#" class="runner-button" {$printalllink_attrs}>Print all pages</a>
+	</span>
+{END printall_link}
+
+
+
+
+</span></td>
+{END prints_block}
+
+
+{BEGIN asearch_link}
+<td  class="runner-cc runner-bl runner-b-toplinks_advsearch" {$brickclass_toplinks_advsearch}><span>	<span class="runner-btnframe">
+	<span class="runner-btnleft"></span>
+	<span class="runner-btnright"></span>
+	<a href="#" class="runner-button" {$advsearchlink_attrs}>Advanced search</a>
+	</span>
+</span></td>
+{END asearch_link}
+
+
+{BEGIN import_link}
+<td  class="runner-cc runner-bl runner-b-toplinks_import" {$brickclass_toplinks_import}><span>	<span class="runner-btnframe">
+	<span class="runner-btnleft"></span>
+	<span class="runner-btnright"></span>
+	<a href="Movies_import.php?{$crosstable_attrs}" class="runner-button" {$importlink_attrs}>Import</a>
+	</span>
+</span></td>
+{END import_link}
+
+
+{BEGIN export_link}
+<td  class="runner-cc runner-bl runner-b-toplinks_export" {$brickclass_toplinks_export}><span>	<span class="runner-btnframe">
+	<span class="runner-btnleft"></span>
+	<span class="runner-btnright"></span>
+	<a target="_blank" href="Movies_export.php" class="runner-button" {$exportlink_attrs}>Export results</a>
+	</span>
+</span></td>
+{END export_link}
+
+
+
+<td class="runner-cc filler"></td>
+</tr>
+</table></td>
+<td class="runner-cr"></td>
+</tr>
+
+<tr class="{$cfooterclass_toplinks}">
+<td class="runner-cl"><img src="images/spacer.gif"></td>
+<td class="runner-cc"></td><td class="runner-cr"><img src="images/spacer.gif"></td>
+</tr>
+</table>
+{END container_toplinks}
+
+
+
+
+
+{BEGIN container_search}
+<table class="runner-c runner-c-search" cellpadding="0" >
+<tr class="{$cheaderclass_search}">
+<td class="runner-cl"><img src="images/spacer.gif"></td>
+<td class="runner-cc"></td><td class="runner-cr"><img src="images/spacer.gif"></td>
+</tr>
+<tr class="runner-row style1">
+<td class="runner-cl"></td>
+<td class="runner-cc">
+<table border="0" cellpadding="0" class="runner-hc">
+<tr>
+
+{BEGIN searchform_block}
+<td  class="runner-cc runner-bl runner-b-search" {$brickclass_search}><span>	<span>
+		{BEGIN searchform_text}
+		<input type="text" {$searchfor_attrs} size="25">
+		{END searchform_text}
+		&nbsp;
+		{BEGIN searchform_search}
+		<span class="runner-btnframe">
+			<span class="runner-btnleft"></span>
+			<span class="runner-btnright"></span>
+			<a href="#" class="runner-button-img" {$searchbutton_attrs}><img src="images/search/search.gif"></a>
+		</span>
+		{END searchform_search}
+		&nbsp;
+		{BEGIN searchform_showall}
+		
+		<span class="runner-btnframe" {$showAllCont_attrs}>
+			<span class="runner-btnleft"></span>
+			<span class="runner-btnright"></span>
+			<a href="#" class="runner-button" {$showallbutton_attrs}>Show all</a>
+		</span>
+		{END searchform_showall}
+	</span>
+</span></td>
+{END searchform_block}
+
+
+{BEGIN searchformbuttons_block}
+<td  class="runner-cc runner-bl runner-b-search_buttons" {$brickclass_search_buttons}><span>	{BEGIN searchPanelTopButtons}
+	<span>
+		&nbsp;
+		<span class="runner-btnframe">
+		<span class="runner-btnleft"></span>
+		<span class="runner-btnright"></span>
+		<a href="#" class="runner-button-img" id="showSrchWin{$id}" {$showHideSearchWin_attrs}><img src="images/search/showWindowPin.gif"></a>
+		</span>
+		&nbsp;		
+		<span class="runner-btnframe">
+		<span class="runner-btnleft"></span>
+		<span class="runner-btnright"></span>
+		<a href="#" class="runner-button-img" id="showOptPanel{$id}" {$showHideSearchPanel_attrs}><img src="images/search/showOptions.gif"></a>
+		</span>
+	</span>
+	{END searchPanelTopButtons}
+</span></td>
+{END searchformbuttons_block}
+
+<td class="runner-cc filler"></td>
+{BEGIN details_block}
+<td  class="runner-cc runner-br runner-b-details_found" {$brickclass_details_found}><span>	<span {$details_attrs}>
+		Details found: <b><span class="runner-details_found_count">{$records_found}</span></b>
+	</span>
+</span></td>
+{END details_block}
+
+
+{BEGIN pages_block}
+<td  class="runner-cc runner-br runner-b-page_of" {$brickclass_page_of}><span>	<span {$pages_attrs}>
+		Page <b>{$page}</b> of <b>{$maxpages}</b>
+	</span>
+
+</span></td>
+{END pages_block}
+
+
+{BEGIN recordspp_block}
+<td  class="runner-cc runner-br runner-b-recsperpage" {$brickclass_recsperpage}><span>	<span id="recordspp_block{$id}" name="recordspp_block{$id}">
+			Records Per Page:&nbsp;{$recsPerPage}
+	</span>	
+</span></td>
+{END recordspp_block}
+
+
+</tr>
+</table></td>
+<td class="runner-cr"></td>
+</tr>
+
+<tr class="{$cfooterclass_search}">
+<td class="runner-cl"><img src="images/spacer.gif"></td>
+<td class="runner-cc"></td><td class="runner-cr"><img src="images/spacer.gif"></td>
+</tr>
+</table>
+{END container_search}
+
+
+
+{BEGIN container_recordcontrols}
+<table class="runner-c runner-c-recordcontrols" cellpadding="0" >
+<tr class="{$cheaderclass_recordcontrols}">
+<td class="runner-cl"><img src="images/spacer.gif"></td>
+<td class="runner-cc"></td><td class="runner-cr"><img src="images/spacer.gif"></td>
+</tr>
+<tr class="runner-row style1">
+<td class="runner-cl"></td>
+<td class="runner-cc">
+<table border="0" cellpadding="0" class="runner-hc">
+<tr>
+
+{BEGIN newrecord_controls_block}
+<td  class="runner-cc runner-bl runner-b-recordcontrols_new" {$brickclass_recordcontrols_new}><span>		{BEGIN add_link}
+		<span class="runner-btnframe">
+		<span class="runner-btnleft"></span>
+		<span class="runner-btnright"></span>
+		<a href="#" class="runner-button" {$addlink_attrs}>Add new</a>
+		</span>
+	{END add_link}
+
+		{BEGIN inlineadd_link}
+		<span class="runner-btnframe">
+		<span class="runner-btnleft"></span>
+		<span class="runner-btnright"></span>
+		<a href="#" class="runner-button" {$inlineaddlink_attrs}>Inline Add</a>
+		</span>
+	{END inlineadd_link}
+
+
+</span></td>
+{END newrecord_controls_block}
+
+
+{BEGIN record_controls_block}
+<td  class="runner-cc runner-bl runner-b-recordcontrol" {$brickclass_recordcontrol}><span>	
+			{BEGIN editselected_link}
+		<span class="runner-btnframe" {$editselectedlink_span}>
+		<span class="runner-btnleft"></span>
+		<span class="runner-btnright"></span>
+		<a href="#" class="runner-button" {$editselectedlink_attrs}>Edit selected</a>
+		</span>
+	{END editselected_link}
+	{BEGIN saveall_link}
+		<span class="runner-btnframe" {$savealllink_span}>
+		<span class="runner-btnleft"></span>
+		<span class="runner-btnright"></span>
+		<a href="#" class="runner-button" {$savealllink_attrs}>Save all</a>
+		</span>
+	{END saveall_link}
+	{BEGIN cancelall_link}
+		<span class="runner-btnframe" {$cancelalllink_span}>
+		<span class="runner-btnleft"></span>
+		<span class="runner-btnright"></span>
+		<a href="#" class="runner-button" {$cancelalllink_attrs}>Cancel</a>
+		</span>
+	{END cancelall_link}
+
+		{BEGIN deleteselected_link}
+		<span class="runner-btnframe" {$deleteselectedlink_span}>
+		<span class="runner-btnleft"></span>
+		<span class="runner-btnright"></span>
+		<a href="#" class="runner-button" {$deleteselectedlink_attrs}>Delete selected</a>
+		</span>
+	{END deleteselected_link}
+
+		{BEGIN exportselected_link}
+		<span class="runner-btnframe" {$exportselectedlink_span}>
+		<span class="runner-btnleft"></span>
+		<span class="runner-btnright"></span>
+		<a href="#" class="runner-button" {$exportselectedlink_attrs}>Export selected</a>
+		</span>
+	{END exportselected_link}
+
+		{BEGIN printselected_link}
+		<span class="runner-btnframe" {$printselectedlink_span}>
+		<span class="runner-btnleft"></span>
+		<span class="runner-btnright"></span>
+		<a href="#" class="runner-button" {$printselectedlink_attrs}>Print selected</a>
+		</span>
+	{END printselected_link}
+
+</span></td>
+{END record_controls_block}
+
+<td class="runner-cc filler"></td>
+</tr>
+</table></td>
+<td class="runner-cr"></td>
+</tr>
+
+<tr class="{$cfooterclass_recordcontrols}">
+<td class="runner-cl"><img src="images/spacer.gif"></td>
+<td class="runner-cc"></td><td class="runner-cr"><img src="images/spacer.gif"></td>
+</tr>
+</table>
+{END container_recordcontrols}
+
+
+				</td>
+			</tr>
+			<tr class="runner-body">
+				
+				<td class="runner-left {$blockclass_left}" >
+					
+
+{BEGIN container_left}
+<table class="runner-c runner-c-left" cellpadding="0" >
+<tr class="{$cheaderclass_left}">
+<td class="runner-cl"><img src="images/spacer.gif"></td>
+<td class="runner-cc"></td><td class="runner-cr"><img src="images/spacer.gif"></td>
+</tr>
+
+{BEGIN searchPanel}
+<tr  class="runner-row style1 runner-b-searchpanel {$brickclass_searchpanel}"><td class="runner-cl"></td><td class="runner-cc runner-brickcontents" ><div class="searchPanelContainer">
+{$adv_search_panel}
+</div></td><td class="runner-cr"></td></tr>{END searchPanel}
+
+
+<tr class="{$cfooterclass_left}">
+<td class="runner-cl"><img src="images/spacer.gif"></td>
+<td class="runner-cc"></td><td class="runner-cr"><img src="images/spacer.gif"></td>
+</tr>
+</table>
+{END container_left}
+
+
+				</td>	
+				
+				<td class="runner-center {$blockclass_center}">
+					
+
+{BEGIN container_message}
+<table class="runner-c runner-c-message" cellpadding="0" >
+<tr class="{$cheaderclass_message}">
+<td class="runner-cl"><img src="images/spacer.gif"></td>
+<td class="runner-cc"></td><td class="runner-cr"><img src="images/spacer.gif"></td>
+</tr>
+<tr class="runner-row style1">
+<td class="runner-cl"></td>
+<td class="runner-cc">
+<table border="0" cellpadding="0" class="runner-hc">
+<tr>
+
+{BEGIN message_block}
+<td  class="runner-cc runner-bc runner-b-message" {$brickclass_message}><span><div class="runner-message">{$message}</div></span></td>
+{END message_block}
+
+
+</tr>
+</table></td>
+<td class="runner-cr"></td>
+</tr>
+
+<tr class="{$cfooterclass_message}">
+<td class="runner-cl"><img src="images/spacer.gif"></td>
+<td class="runner-cc"></td><td class="runner-cr"><img src="images/spacer.gif"></td>
+</tr>
+</table>
+{END container_message}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+						<table class="runner-c runner-c-grid runner-b-grid" cellpadding="0" >
+						<thead>
+															{BEGIN grid_header}
+								<tr class="runner-toprow style1 {$gridHeader_class}" >
+									{BEGIN record_header}
+									<th class="runner-cl"><img src="images/spacer.gif"></th>
+																		{BEGIN listIcons_column}
+									<th class="runner-cc" iEditCont="all">&nbsp;</th>
+									{END listIcons_column}	
+
+																		{BEGIN checkbox_column}
+									<th class="runner-cc runner-bc">
+										<input type="checkbox" {$checkboxheader_attrs}>
+									</th>
+									{END checkbox_column}
+
+																										{BEGIN idTag_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN idTag_fieldheader}
+																				<a {$idTag_orderlinkattrs}>
+											Id Tag
+										</a>
+									{END idTag_fieldheader}
+									</th>
+									{END idTag_fieldheadercolumn}
+
+																	{BEGIN idSet1_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN idSet1_fieldheader}
+																				<a {$idSet1_orderlinkattrs}>
+											Id Set1
+										</a>
+									{END idSet1_fieldheader}
+									</th>
+									{END idSet1_fieldheadercolumn}
+
+																	{BEGIN strSet_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN strSet_fieldheader}
+																				<a {$strSet_orderlinkattrs}>
+											Str Set
+										</a>
+									{END strSet_fieldheader}
+									</th>
+									{END strSet_fieldheadercolumn}
+
+																	{BEGIN idGenre_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN idGenre_fieldheader}
+																				<a {$idGenre_orderlinkattrs}>
+											Id Genre
+										</a>
+									{END idGenre_fieldheader}
+									</th>
+									{END idGenre_fieldheadercolumn}
+
+																	{BEGIN strGenre_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN strGenre_fieldheader}
+																				<a {$strGenre_orderlinkattrs}>
+											Str Genre
+										</a>
+									{END strGenre_fieldheader}
+									</th>
+									{END strGenre_fieldheadercolumn}
+
+																	{BEGIN strPath_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN strPath_fieldheader}
+																				<a {$strPath_orderlinkattrs}>
+											Str Path
+										</a>
+									{END strPath_fieldheader}
+									</th>
+									{END strPath_fieldheadercolumn}
+
+																	{BEGIN dateAdded_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN dateAdded_fieldheader}
+																				<a {$dateAdded_orderlinkattrs}>
+											Date Added
+										</a>
+									{END dateAdded_fieldheader}
+									</th>
+									{END dateAdded_fieldheadercolumn}
+
+																	{BEGIN idPath_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN idPath_fieldheader}
+																				<a {$idPath_orderlinkattrs}>
+											Id Path
+										</a>
+									{END idPath_fieldheader}
+									</th>
+									{END idPath_fieldheadercolumn}
+
+																	{BEGIN strFilename_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN strFilename_fieldheader}
+																				<a {$strFilename_orderlinkattrs}>
+											Str Filename
+										</a>
+									{END strFilename_fieldheader}
+									</th>
+									{END strFilename_fieldheadercolumn}
+
+																	{BEGIN strTag_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN strTag_fieldheader}
+																				<a {$strTag_orderlinkattrs}>
+											Str Tag
+										</a>
+									{END strTag_fieldheader}
+									</th>
+									{END strTag_fieldheadercolumn}
+
+																	{BEGIN idMovie_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN idMovie_fieldheader}
+																				<a {$idMovie_orderlinkattrs}>
+											Id Movie
+										</a>
+									{END idMovie_fieldheader}
+									</th>
+									{END idMovie_fieldheadercolumn}
+
+																	{BEGIN idFile_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN idFile_fieldheader}
+																				<a {$idFile_orderlinkattrs}>
+											Id File
+										</a>
+									{END idFile_fieldheader}
+									</th>
+									{END idFile_fieldheadercolumn}
+
+																	{BEGIN c00_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c00_fieldheader}
+																				<a {$c00_orderlinkattrs}>
+											Movie Name
+										</a>
+									{END c00_fieldheader}
+									</th>
+									{END c00_fieldheadercolumn}
+
+																	{BEGIN c01_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c01_fieldheader}
+																				<a {$c01_orderlinkattrs}>
+											Plot
+										</a>
+									{END c01_fieldheader}
+									</th>
+									{END c01_fieldheadercolumn}
+
+																	{BEGIN c02_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c02_fieldheader}
+																				<a {$c02_orderlinkattrs}>
+											Outline
+										</a>
+									{END c02_fieldheader}
+									</th>
+									{END c02_fieldheadercolumn}
+
+																	{BEGIN c03_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c03_fieldheader}
+																				<a {$c03_orderlinkattrs}>
+											Tagline
+										</a>
+									{END c03_fieldheader}
+									</th>
+									{END c03_fieldheadercolumn}
+
+																	{BEGIN c04_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c04_fieldheader}
+																				<a {$c04_orderlinkattrs}>
+											votes
+										</a>
+									{END c04_fieldheader}
+									</th>
+									{END c04_fieldheadercolumn}
+
+																	{BEGIN c05_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c05_fieldheader}
+																				<a {$c05_orderlinkattrs}>
+											Rating
+										</a>
+									{END c05_fieldheader}
+									</th>
+									{END c05_fieldheadercolumn}
+
+																	{BEGIN c06_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c06_fieldheader}
+																				<a {$c06_orderlinkattrs}>
+											Writers
+										</a>
+									{END c06_fieldheader}
+									</th>
+									{END c06_fieldheadercolumn}
+
+																	{BEGIN c07_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c07_fieldheader}
+																				<a {$c07_orderlinkattrs}>
+											Year
+										</a>
+									{END c07_fieldheader}
+									</th>
+									{END c07_fieldheadercolumn}
+
+																	{BEGIN c08_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c08_fieldheader}
+																				<a {$c08_orderlinkattrs}>
+											Thumbnails
+										</a>
+									{END c08_fieldheader}
+									</th>
+									{END c08_fieldheadercolumn}
+
+																	{BEGIN c09_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c09_fieldheader}
+																				<a {$c09_orderlinkattrs}>
+											Imdb ID
+										</a>
+									{END c09_fieldheader}
+									</th>
+									{END c09_fieldheadercolumn}
+
+																	{BEGIN c10_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c10_fieldheader}
+																				<a {$c10_orderlinkattrs}>
+											Sorting Title
+										</a>
+									{END c10_fieldheader}
+									</th>
+									{END c10_fieldheadercolumn}
+
+																	{BEGIN c11_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c11_fieldheader}
+																				<a {$c11_orderlinkattrs}>
+											Runtime
+										</a>
+									{END c11_fieldheader}
+									</th>
+									{END c11_fieldheadercolumn}
+
+																	{BEGIN c12_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c12_fieldheader}
+																				<a {$c12_orderlinkattrs}>
+											MPAA Rating
+										</a>
+									{END c12_fieldheader}
+									</th>
+									{END c12_fieldheadercolumn}
+
+																	{BEGIN c13_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c13_fieldheader}
+																				<a {$c13_orderlinkattrs}>
+											IMDB Rating
+										</a>
+									{END c13_fieldheader}
+									</th>
+									{END c13_fieldheadercolumn}
+
+																	{BEGIN c14_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c14_fieldheader}
+																				<a {$c14_orderlinkattrs}>
+											Genre
+										</a>
+									{END c14_fieldheader}
+									</th>
+									{END c14_fieldheadercolumn}
+
+																	{BEGIN c15_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c15_fieldheader}
+																				<a {$c15_orderlinkattrs}>
+											Director
+										</a>
+									{END c15_fieldheader}
+									</th>
+									{END c15_fieldheadercolumn}
+
+																	{BEGIN c16_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c16_fieldheader}
+																				<a {$c16_orderlinkattrs}>
+											Original Title
+										</a>
+									{END c16_fieldheader}
+									</th>
+									{END c16_fieldheadercolumn}
+
+																	{BEGIN c18_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c18_fieldheader}
+																				<a {$c18_orderlinkattrs}>
+											Studio
+										</a>
+									{END c18_fieldheader}
+									</th>
+									{END c18_fieldheadercolumn}
+
+																	{BEGIN c19_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c19_fieldheader}
+																				<a {$c19_orderlinkattrs}>
+											Trailer
+										</a>
+									{END c19_fieldheader}
+									</th>
+									{END c19_fieldheadercolumn}
+
+																	{BEGIN c20_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c20_fieldheader}
+																				<a {$c20_orderlinkattrs}>
+											FanArt
+										</a>
+									{END c20_fieldheader}
+									</th>
+									{END c20_fieldheadercolumn}
+
+																	{BEGIN c21_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c21_fieldheader}
+																				<a {$c21_orderlinkattrs}>
+											Country
+										</a>
+									{END c21_fieldheader}
+									</th>
+									{END c21_fieldheadercolumn}
+
+																	{BEGIN c22_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c22_fieldheader}
+																				<a {$c22_orderlinkattrs}>
+											Path
+										</a>
+									{END c22_fieldheader}
+									</th>
+									{END c22_fieldheadercolumn}
+
+																	{BEGIN c23_fieldheadercolumn}
+									<th class="runner-cc ">
+									{BEGIN c23_fieldheader}
+																				<a {$c23_orderlinkattrs}>
+											Pathid
+										</a>
+									{END c23_fieldheader}
+									</th>
+									{END c23_fieldheadercolumn}
+
+																	{BEGIN idSet_fieldheadercolumn}
+									<th class="runner-cc runner-clast">
+									{BEGIN idSet_fieldheader}
+																				<a {$idSet_orderlinkattrs}>
+											Id Set
+										</a>
+									{END idSet_fieldheader}
+									</th>
+									{END idSet_fieldheadercolumn}
+
+
+									
+									<th class="runner-cr"><img src="images/spacer.gif"></th>
+									{BEGIN endrecordheader_block}
+									<th class="runner-cs">&nbsp;</th>
+									
+									{END endrecordheader_block}
+									
+									{END record_header}
+									
+								</tr>
+								{END grid_header}
+
+						</thead>
+						<tbody>	
+															{BEGIN grid_row}
+								<tr class="runner-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+									{BEGIN grid_record}
+									<td class="runner-cl" {$rowstyle}></td>
+
+																		{BEGIN listIcons_column}
+									<td class="runner-cc runner-bc runner-icons" iEditCont="all" {$rowstyle}>
+																		{BEGIN edit_column}
+									{BEGIN edit_link}
+									<a class="runner-button-img" {$editlink_attrs} title="Edit"><img class="runner-cicon" src="images/icon_edit_new.gif" alt="Edit"></a>
+									{END edit_link}
+									{END edit_column}
+
+																		{BEGIN inlineedit_column}
+									{BEGIN inlineedit_link}
+									<a class="runner-button-img" {$inlineeditlink_attrs} title="Inline Edit"><img class="runner-cicon" src="images/icon_inline_edit_new.gif" alt="Inline Edit"></a>
+									{END inlineedit_link}
+									{END inlineedit_column}
+
+									
+																		{BEGIN view_column}
+									{BEGIN view_link}
+									<a class="runner-button-img" {$viewlink_attrs} title="View"><img class="runner-cicon" src="images/icon_view_new.gif" alt="View"></a>
+									{END view_link}
+									{END view_column}
+									</td>	
+									{END listIcons_column}	
+
+																		{BEGIN checkbox_column}
+									<td class="runner-cc runner-bc" iEditCont="checkBox" {$rowstyle}>
+									{BEGIN checkbox}
+									<input type="checkbox" {$checkbox_attrs}>
+									{END checkbox}
+									</td>
+									{END checkbox_column}
+
+
+										{BEGIN idTag_fieldcolumn}
+	<td class="runner-cc  {$idTag_class}" {$idTag_style}>
+		{$idTag_value}
+	</td>
+{END idTag_fieldcolumn}
+
+	{BEGIN idSet1_fieldcolumn}
+	<td class="runner-cc  {$idSet1_class}" {$idSet1_style}>
+		{$idSet1_value}
+	</td>
+{END idSet1_fieldcolumn}
+
+	{BEGIN strSet_fieldcolumn}
+	<td class="runner-cc  {$strSet_class}" {$strSet_style}>
+		{$strSet_value}
+	</td>
+{END strSet_fieldcolumn}
+
+	{BEGIN idGenre_fieldcolumn}
+	<td class="runner-cc  {$idGenre_class}" {$idGenre_style}>
+		{$idGenre_value}
+	</td>
+{END idGenre_fieldcolumn}
+
+	{BEGIN strGenre_fieldcolumn}
+	<td class="runner-cc  {$strGenre_class}" {$strGenre_style}>
+		{$strGenre_value}
+	</td>
+{END strGenre_fieldcolumn}
+
+	{BEGIN strPath_fieldcolumn}
+	<td class="runner-cc  {$strPath_class}" {$strPath_style}>
+		{$strPath_value}
+	</td>
+{END strPath_fieldcolumn}
+
+	{BEGIN dateAdded_fieldcolumn}
+	<td class="runner-cc  {$dateAdded_class}" {$dateAdded_style}>
+		{$dateAdded_value}
+	</td>
+{END dateAdded_fieldcolumn}
+
+	{BEGIN idPath_fieldcolumn}
+	<td class="runner-cc  {$idPath_class}" {$idPath_style}>
+		{$idPath_value}
+	</td>
+{END idPath_fieldcolumn}
+
+	{BEGIN strFilename_fieldcolumn}
+	<td class="runner-cc  {$strFilename_class}" {$strFilename_style}>
+		{$strFilename_value}
+	</td>
+{END strFilename_fieldcolumn}
+
+	{BEGIN strTag_fieldcolumn}
+	<td class="runner-cc  {$strTag_class}" {$strTag_style}>
+		{$strTag_value}
+	</td>
+{END strTag_fieldcolumn}
+
+	{BEGIN idMovie_fieldcolumn}
+	<td class="runner-cc  {$idMovie_class}" {$idMovie_style}>
+		{$idMovie_value}
+	</td>
+{END idMovie_fieldcolumn}
+
+	{BEGIN idFile_fieldcolumn}
+	<td class="runner-cc  {$idFile_class}" {$idFile_style}>
+		{$idFile_value}
+	</td>
+{END idFile_fieldcolumn}
+
+	{BEGIN c00_fieldcolumn}
+	<td class="runner-cc  {$c00_class}" {$c00_style}>
+		{$c00_value}
+	</td>
+{END c00_fieldcolumn}
+
+	{BEGIN c01_fieldcolumn}
+	<td class="runner-cc  {$c01_class}" {$c01_style}>
+		{$c01_value}
+	</td>
+{END c01_fieldcolumn}
+
+	{BEGIN c02_fieldcolumn}
+	<td class="runner-cc  {$c02_class}" {$c02_style}>
+		{$c02_value}
+	</td>
+{END c02_fieldcolumn}
+
+	{BEGIN c03_fieldcolumn}
+	<td class="runner-cc  {$c03_class}" {$c03_style}>
+		{$c03_value}
+	</td>
+{END c03_fieldcolumn}
+
+	{BEGIN c04_fieldcolumn}
+	<td class="runner-cc  {$c04_class}" {$c04_style}>
+		{$c04_value}
+	</td>
+{END c04_fieldcolumn}
+
+	{BEGIN c05_fieldcolumn}
+	<td class="runner-cc  {$c05_class}" {$c05_style}>
+		{$c05_value}
+	</td>
+{END c05_fieldcolumn}
+
+	{BEGIN c06_fieldcolumn}
+	<td class="runner-cc  {$c06_class}" {$c06_style}>
+		{$c06_value}
+	</td>
+{END c06_fieldcolumn}
+
+	{BEGIN c07_fieldcolumn}
+	<td class="runner-cc  {$c07_class}" {$c07_style}>
+		{$c07_value}
+	</td>
+{END c07_fieldcolumn}
+
+	{BEGIN c08_fieldcolumn}
+	<td class="runner-cc  {$c08_class}" {$c08_style}>
+		{$c08_value}
+	</td>
+{END c08_fieldcolumn}
+
+	{BEGIN c09_fieldcolumn}
+	<td class="runner-cc  {$c09_class}" {$c09_style}>
+		{$c09_value}
+	</td>
+{END c09_fieldcolumn}
+
+	{BEGIN c10_fieldcolumn}
+	<td class="runner-cc  {$c10_class}" {$c10_style}>
+		{$c10_value}
+	</td>
+{END c10_fieldcolumn}
+
+	{BEGIN c11_fieldcolumn}
+	<td class="runner-cc  {$c11_class}" {$c11_style}>
+		{$c11_value}
+	</td>
+{END c11_fieldcolumn}
+
+	{BEGIN c12_fieldcolumn}
+	<td class="runner-cc  {$c12_class}" {$c12_style}>
+		{$c12_value}
+	</td>
+{END c12_fieldcolumn}
+
+	{BEGIN c13_fieldcolumn}
+	<td class="runner-cc  {$c13_class}" {$c13_style}>
+		{$c13_value}
+	</td>
+{END c13_fieldcolumn}
+
+	{BEGIN c14_fieldcolumn}
+	<td class="runner-cc  {$c14_class}" {$c14_style}>
+		{$c14_value}
+	</td>
+{END c14_fieldcolumn}
+
+	{BEGIN c15_fieldcolumn}
+	<td class="runner-cc  {$c15_class}" {$c15_style}>
+		{$c15_value}
+	</td>
+{END c15_fieldcolumn}
+
+	{BEGIN c16_fieldcolumn}
+	<td class="runner-cc  {$c16_class}" {$c16_style}>
+		{$c16_value}
+	</td>
+{END c16_fieldcolumn}
+
+	{BEGIN c18_fieldcolumn}
+	<td class="runner-cc  {$c18_class}" {$c18_style}>
+		{$c18_value}
+	</td>
+{END c18_fieldcolumn}
+
+	{BEGIN c19_fieldcolumn}
+	<td class="runner-cc  {$c19_class}" {$c19_style}>
+		{$c19_value}
+	</td>
+{END c19_fieldcolumn}
+
+	{BEGIN c20_fieldcolumn}
+	<td class="runner-cc  {$c20_class}" {$c20_style}>
+		{$c20_value}
+	</td>
+{END c20_fieldcolumn}
+
+	{BEGIN c21_fieldcolumn}
+	<td class="runner-cc  {$c21_class}" {$c21_style}>
+		{$c21_value}
+	</td>
+{END c21_fieldcolumn}
+
+	{BEGIN c22_fieldcolumn}
+	<td class="runner-cc  {$c22_class}" {$c22_style}>
+		{$c22_value}
+	</td>
+{END c22_fieldcolumn}
+
+	{BEGIN c23_fieldcolumn}
+	<td class="runner-cc  {$c23_class}" {$c23_style}>
+		{$c23_value}
+	</td>
+{END c23_fieldcolumn}
+
+	{BEGIN idSet_fieldcolumn}
+	<td class="runner-cc runner-clast {$idSet_class}" {$idSet_style}>
+		{$idSet_value}
+	</td>
+{END idSet_fieldcolumn}
+
+
+																		<td class="runner-cr" {$rowstyle}></td>
+									{BEGIN endrecord_block}
+									<td class="runner-cs" {$endrecordblock_attrs}>&nbsp;</td>
+									{END endrecord_block}
+																	
+									{END grid_record}
+
+								</tr>
+								{END grid_row}
+															{BEGIN grid_footer}
+																<tr class="runner-bottomrow style1{$gridFooter_class}" >
+									{BEGIN record_footer}
+									<td class="runner-cl"><img src="images/spacer.gif"></td>
+																		{BEGIN listIcons_column}
+									<td class="runner-cc"></td>
+									{END listIcons_column}	
+									
+																		{BEGIN checkbox_column}
+									<td class="runner-cc"></td>
+									{END checkbox_column}
+
+
+									{BEGIN idTag_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END idTag_fieldheadercolumn}
+{BEGIN idSet1_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END idSet1_fieldheadercolumn}
+{BEGIN strSet_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END strSet_fieldheadercolumn}
+{BEGIN idGenre_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END idGenre_fieldheadercolumn}
+{BEGIN strGenre_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END strGenre_fieldheadercolumn}
+{BEGIN strPath_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END strPath_fieldheadercolumn}
+{BEGIN dateAdded_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END dateAdded_fieldheadercolumn}
+{BEGIN idPath_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END idPath_fieldheadercolumn}
+{BEGIN strFilename_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END strFilename_fieldheadercolumn}
+{BEGIN strTag_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END strTag_fieldheadercolumn}
+{BEGIN idMovie_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END idMovie_fieldheadercolumn}
+{BEGIN idFile_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END idFile_fieldheadercolumn}
+{BEGIN c00_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c00_fieldheadercolumn}
+{BEGIN c01_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c01_fieldheadercolumn}
+{BEGIN c02_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c02_fieldheadercolumn}
+{BEGIN c03_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c03_fieldheadercolumn}
+{BEGIN c04_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c04_fieldheadercolumn}
+{BEGIN c05_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c05_fieldheadercolumn}
+{BEGIN c06_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c06_fieldheadercolumn}
+{BEGIN c07_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c07_fieldheadercolumn}
+{BEGIN c08_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c08_fieldheadercolumn}
+{BEGIN c09_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c09_fieldheadercolumn}
+{BEGIN c10_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c10_fieldheadercolumn}
+{BEGIN c11_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c11_fieldheadercolumn}
+{BEGIN c12_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c12_fieldheadercolumn}
+{BEGIN c13_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c13_fieldheadercolumn}
+{BEGIN c14_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c14_fieldheadercolumn}
+{BEGIN c15_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c15_fieldheadercolumn}
+{BEGIN c16_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c16_fieldheadercolumn}
+{BEGIN c18_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c18_fieldheadercolumn}
+{BEGIN c19_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c19_fieldheadercolumn}
+{BEGIN c20_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c20_fieldheadercolumn}
+{BEGIN c21_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c21_fieldheadercolumn}
+{BEGIN c22_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c22_fieldheadercolumn}
+{BEGIN c23_fieldheadercolumn}
+<td class="runner-cc "></td>
+{END c23_fieldheadercolumn}
+{BEGIN idSet_fieldheadercolumn}
+<td class="runner-cc runner-clast"></td>
+{END idSet_fieldheadercolumn}
+
+									<td class="runner-cr"><img src="images/spacer.gif"></td>
+									
+									
+									{BEGIN endrecordfooter_block}
+									<td class="runner-cs"></td>
+									{END endrecordfooter_block}
+									{END record_footer}
+								</tr>
+								{END grid_footer}
+
+						</tbody>
+					</table>
+					
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+
+{BEGIN container_pagination}
+<table class="runner-c runner-c-pagination" cellpadding="0" >
+<tr class="{$cheaderclass_pagination}">
+<td class="runner-cl"><img src="images/spacer.gif"></td>
+<td class="runner-cc"></td><td class="runner-cr"><img src="images/spacer.gif"></td>
+</tr>
+<tr class="runner-row style1">
+<td class="runner-cl"></td>
+<td class="runner-cc">
+<table border="0" cellpadding="0" class="runner-hc">
+<tr>
+
+{BEGIN pagination_block}
+<td  class="runner-cc runner-bc runner-b-pagination" {$brickclass_pagination}><span>{$pagination}</span></td>
+{END pagination_block}
+
+
+</tr>
+</table></td>
+<td class="runner-cr"></td>
+</tr>
+
+<tr class="{$cfooterclass_pagination}">
+<td class="runner-cl"><img src="images/spacer.gif"></td>
+<td class="runner-cc"></td><td class="runner-cr"><img src="images/spacer.gif"></td>
+</tr>
+</table>
+{END container_pagination}
+
+
+				</td>	
+
+				<td class="runner-right {$blockclass_right}">
+					
+				</td>	
+			</tr>
+			<tr class="runner-footer">
+				<td class="runner-bottom" colspan=3>
+					<!--%%bottom%%-->
+				</td>
+			</tr>
+		</table>
+		{$footer}
+	{END body}
+	</body>
+</html>
