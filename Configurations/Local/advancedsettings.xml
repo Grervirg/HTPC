@@ -18,6 +18,7 @@
      <videolibrary>
 		  <recentlyaddeditems>35</recentlyaddeditems>
           <importwatchedstate>true</importwatchedstate>
+	  <importresumepoint>true</importresumepoint>
 		  <hideemptyseries>true</hideemptyseries>
 		  <dateadded>0</dateadded> <!-- 0 results in using the current datetime when adding a video;
                                  1 (default) results in prefering to use the files mtime (if it's valid) and only using the file's ctime if the mtime isn't valid;
@@ -35,6 +36,15 @@ This can help on bad connections to keep the cache filled. It will also greatly 
 
 	
 	 
-	 
+	<pathsubstitution>
+  <substitute>
+    <from>nfs://media/MyMedia</from>
+    <to>/media/MyMedia</to>
+  </substitute>
+    <substitute>
+    <from>nfs://media/Tv</from>
+    <to>/media/Tv</to>
+  </substitute>
+ </pathsubstitution> 
 	 
 </advancedsettings>
