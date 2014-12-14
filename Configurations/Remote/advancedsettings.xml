@@ -34,7 +34,16 @@ This can help on bad connections to keep the cache filled. It will also greatly 
 	 </network>
 
 	
-	 
+<pathsubstitution>
+  <substitute>
+    <from>/media/MyMedia</from>
+    <to>nfs://media/MyMedia</to>
+  </substitute>
+    <substitute>
+    <from>/media/Tv</from>
+    <to>nfs://media/Tv</to>
+  </substitute>
+ </pathsubstitution>
 	 
 	 
 </advancedsettings>
