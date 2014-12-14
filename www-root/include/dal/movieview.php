@@ -1,0 +1,40 @@
+<?php
+$dalTablemovieview = array();
+$dalTablemovieview["idMovie"] = array("type"=>3,"varname"=>"idMovie");
+$dalTablemovieview["idFile"] = array("type"=>3,"varname"=>"idFile");
+$dalTablemovieview["c00"] = array("type"=>201,"varname"=>"c00");
+$dalTablemovieview["c01"] = array("type"=>201,"varname"=>"c01");
+$dalTablemovieview["c02"] = array("type"=>201,"varname"=>"c02");
+$dalTablemovieview["c03"] = array("type"=>201,"varname"=>"c03");
+$dalTablemovieview["c04"] = array("type"=>201,"varname"=>"c04");
+$dalTablemovieview["c05"] = array("type"=>201,"varname"=>"c05");
+$dalTablemovieview["c06"] = array("type"=>201,"varname"=>"c06");
+$dalTablemovieview["c07"] = array("type"=>201,"varname"=>"c07");
+$dalTablemovieview["c08"] = array("type"=>201,"varname"=>"c08");
+$dalTablemovieview["c09"] = array("type"=>201,"varname"=>"c09");
+$dalTablemovieview["c10"] = array("type"=>201,"varname"=>"c10");
+$dalTablemovieview["c11"] = array("type"=>201,"varname"=>"c11");
+$dalTablemovieview["c12"] = array("type"=>201,"varname"=>"c12");
+$dalTablemovieview["c13"] = array("type"=>201,"varname"=>"c13");
+$dalTablemovieview["c14"] = array("type"=>201,"varname"=>"c14");
+$dalTablemovieview["c15"] = array("type"=>201,"varname"=>"c15");
+$dalTablemovieview["c16"] = array("type"=>201,"varname"=>"c16");
+$dalTablemovieview["c17"] = array("type"=>201,"varname"=>"c17");
+$dalTablemovieview["c18"] = array("type"=>201,"varname"=>"c18");
+$dalTablemovieview["c19"] = array("type"=>201,"varname"=>"c19");
+$dalTablemovieview["c20"] = array("type"=>201,"varname"=>"c20");
+$dalTablemovieview["c21"] = array("type"=>201,"varname"=>"c21");
+$dalTablemovieview["c22"] = array("type"=>201,"varname"=>"c22");
+$dalTablemovieview["c23"] = array("type"=>201,"varname"=>"c23");
+$dalTablemovieview["idSet"] = array("type"=>3,"varname"=>"idSet");
+$dalTablemovieview["strSet"] = array("type"=>201,"varname"=>"strSet");
+$dalTablemovieview["strFileName"] = array("type"=>201,"varname"=>"strFileName");
+$dalTablemovieview["strPath"] = array("type"=>201,"varname"=>"strPath");
+$dalTablemovieview["playCount"] = array("type"=>3,"varname"=>"playCount");
+$dalTablemovieview["lastPlayed"] = array("type"=>201,"varname"=>"lastPlayed");
+$dalTablemovieview["dateAdded"] = array("type"=>201,"varname"=>"dateAdded");
+$dalTablemovieview["resumeTimeInSeconds"] = array("type"=>5,"varname"=>"resumeTimeInSeconds");
+$dalTablemovieview["totalTimeInSeconds"] = array("type"=>5,"varname"=>"totalTimeInSeconds");
+$dal_info["movieview"]=&$dalTablemovieview;
+
+?>

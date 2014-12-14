@@ -493,106 +493,6 @@ if(@$_POST["a"] == "edited")
 
 		}
 //	processing idSet - end
-//	processing strFilename - begin
-	$condition = 1;
-
-	if($condition)
-	{
-		$control_strFilename = $pageObject->getControl("strFilename", $id);
-		$control_strFilename->readWebValue($evalues, $blobfields, $strWhereClause, $oldValuesRead, $efilename_values);
-
-		}
-//	processing strFilename - end
-//	processing idPath - begin
-	$condition = 1;
-
-	if($condition)
-	{
-		$control_idPath = $pageObject->getControl("idPath", $id);
-		$control_idPath->readWebValue($evalues, $blobfields, $strWhereClause, $oldValuesRead, $efilename_values);
-
-		}
-//	processing idPath - end
-//	processing dateAdded - begin
-	$condition = 1;
-
-	if($condition)
-	{
-		$control_dateAdded = $pageObject->getControl("dateAdded", $id);
-		$control_dateAdded->readWebValue($evalues, $blobfields, $strWhereClause, $oldValuesRead, $efilename_values);
-
-		}
-//	processing dateAdded - end
-//	processing strPath - begin
-	$condition = 1;
-
-	if($condition)
-	{
-		$control_strPath = $pageObject->getControl("strPath", $id);
-		$control_strPath->readWebValue($evalues, $blobfields, $strWhereClause, $oldValuesRead, $efilename_values);
-
-		}
-//	processing strPath - end
-//	processing strGenre - begin
-	$condition = 1;
-
-	if($condition)
-	{
-		$control_strGenre = $pageObject->getControl("strGenre", $id);
-		$control_strGenre->readWebValue($evalues, $blobfields, $strWhereClause, $oldValuesRead, $efilename_values);
-
-		}
-//	processing strGenre - end
-//	processing idGenre - begin
-	$condition = 1;
-
-	if($condition)
-	{
-		$control_idGenre = $pageObject->getControl("idGenre", $id);
-		$control_idGenre->readWebValue($evalues, $blobfields, $strWhereClause, $oldValuesRead, $efilename_values);
-
-		}
-//	processing idGenre - end
-//	processing strSet - begin
-	$condition = 1;
-
-	if($condition)
-	{
-		$control_strSet = $pageObject->getControl("strSet", $id);
-		$control_strSet->readWebValue($evalues, $blobfields, $strWhereClause, $oldValuesRead, $efilename_values);
-
-		}
-//	processing strSet - end
-//	processing idSet1 - begin
-	$condition = 1;
-
-	if($condition)
-	{
-		$control_idSet1 = $pageObject->getControl("idSet1", $id);
-		$control_idSet1->readWebValue($evalues, $blobfields, $strWhereClause, $oldValuesRead, $efilename_values);
-
-		}
-//	processing idSet1 - end
-//	processing strTag - begin
-	$condition = 1;
-
-	if($condition)
-	{
-		$control_strTag = $pageObject->getControl("strTag", $id);
-		$control_strTag->readWebValue($evalues, $blobfields, $strWhereClause, $oldValuesRead, $efilename_values);
-
-		}
-//	processing strTag - end
-//	processing idTag - begin
-	$condition = 1;
-
-	if($condition)
-	{
-		$control_idTag = $pageObject->getControl("idTag", $id);
-		$control_idTag->readWebValue($evalues, $blobfields, $strWhereClause, $oldValuesRead, $efilename_values);
-
-		}
-//	processing idTag - end
 
 	foreach($efilename_values as $ekey=>$value)
 		$evalues[$ekey] = $value;
@@ -858,86 +758,6 @@ if(@$_POST["a"] == "edited")
 					$control_idSet->afterSuccessfulSave();
 				}
 	//	processing idSet - end
-			//	processing strFilename - begin
-							$condition = 1;
-			
-				if($condition)
-				{
-					$control_strFilename->afterSuccessfulSave();
-				}
-	//	processing strFilename - end
-			//	processing idPath - begin
-							$condition = 1;
-			
-				if($condition)
-				{
-					$control_idPath->afterSuccessfulSave();
-				}
-	//	processing idPath - end
-			//	processing dateAdded - begin
-							$condition = 1;
-			
-				if($condition)
-				{
-					$control_dateAdded->afterSuccessfulSave();
-				}
-	//	processing dateAdded - end
-			//	processing strPath - begin
-							$condition = 1;
-			
-				if($condition)
-				{
-					$control_strPath->afterSuccessfulSave();
-				}
-	//	processing strPath - end
-			//	processing strGenre - begin
-							$condition = 1;
-			
-				if($condition)
-				{
-					$control_strGenre->afterSuccessfulSave();
-				}
-	//	processing strGenre - end
-			//	processing idGenre - begin
-							$condition = 1;
-			
-				if($condition)
-				{
-					$control_idGenre->afterSuccessfulSave();
-				}
-	//	processing idGenre - end
-			//	processing strSet - begin
-							$condition = 1;
-			
-				if($condition)
-				{
-					$control_strSet->afterSuccessfulSave();
-				}
-	//	processing strSet - end
-			//	processing idSet1 - begin
-							$condition = 1;
-			
-				if($condition)
-				{
-					$control_idSet1->afterSuccessfulSave();
-				}
-	//	processing idSet1 - end
-			//	processing strTag - begin
-							$condition = 1;
-			
-				if($condition)
-				{
-					$control_strTag->afterSuccessfulSave();
-				}
-	//	processing strTag - end
-			//	processing idTag - begin
-							$condition = 1;
-			
-				if($condition)
-				{
-					$control_idTag->afterSuccessfulSave();
-				}
-	//	processing idTag - end
 				
 				//	after edit event
 				if($pageObject->lockingObj && $inlineedit == EDIT_INLINE)
@@ -1096,16 +916,6 @@ if($readevalues)
 	$data["c22"] = $evalues["c22"];
 	$data["c23"] = $evalues["c23"];
 	$data["idSet"] = $evalues["idSet"];
-	$data["strFilename"] = $evalues["strFilename"];
-	$data["idPath"] = $evalues["idPath"];
-	$data["dateAdded"] = $evalues["dateAdded"];
-	$data["strPath"] = $evalues["strPath"];
-	$data["strGenre"] = $evalues["strGenre"];
-	$data["idGenre"] = $evalues["idGenre"];
-	$data["strSet"] = $evalues["strSet"];
-	$data["idSet1"] = $evalues["idSet1"];
-	$data["strTag"] = $evalues["strTag"];
-	$data["idTag"] = $evalues["idTag"];
 }
 
 /////////////////////////////////////////////////////////////
@@ -1335,86 +1145,6 @@ if($inlineedit != EDIT_INLINE)
 	$xt->assign("idSet_label",true);
 	if(isEnableSection508())
 		$xt->assign_section("idSet_label","<label for=\"".GetInputElementId("idSet", $id, PAGE_EDIT)."\">","</label>");
-		
-	if(!$pageObject->isAppearOnTabs("strFilename"))
-		$xt->assign("strFilename_fieldblock",true);
-	else
-		$xt->assign("strFilename_tabfieldblock",true);
-	$xt->assign("strFilename_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("strFilename_label","<label for=\"".GetInputElementId("strFilename", $id, PAGE_EDIT)."\">","</label>");
-		
-	if(!$pageObject->isAppearOnTabs("idPath"))
-		$xt->assign("idPath_fieldblock",true);
-	else
-		$xt->assign("idPath_tabfieldblock",true);
-	$xt->assign("idPath_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("idPath_label","<label for=\"".GetInputElementId("idPath", $id, PAGE_EDIT)."\">","</label>");
-		
-	if(!$pageObject->isAppearOnTabs("dateAdded"))
-		$xt->assign("dateAdded_fieldblock",true);
-	else
-		$xt->assign("dateAdded_tabfieldblock",true);
-	$xt->assign("dateAdded_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("dateAdded_label","<label for=\"".GetInputElementId("dateAdded", $id, PAGE_EDIT)."\">","</label>");
-		
-	if(!$pageObject->isAppearOnTabs("strPath"))
-		$xt->assign("strPath_fieldblock",true);
-	else
-		$xt->assign("strPath_tabfieldblock",true);
-	$xt->assign("strPath_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("strPath_label","<label for=\"".GetInputElementId("strPath", $id, PAGE_EDIT)."\">","</label>");
-		
-	if(!$pageObject->isAppearOnTabs("strGenre"))
-		$xt->assign("strGenre_fieldblock",true);
-	else
-		$xt->assign("strGenre_tabfieldblock",true);
-	$xt->assign("strGenre_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("strGenre_label","<label for=\"".GetInputElementId("strGenre", $id, PAGE_EDIT)."\">","</label>");
-		
-	if(!$pageObject->isAppearOnTabs("idGenre"))
-		$xt->assign("idGenre_fieldblock",true);
-	else
-		$xt->assign("idGenre_tabfieldblock",true);
-	$xt->assign("idGenre_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("idGenre_label","<label for=\"".GetInputElementId("idGenre", $id, PAGE_EDIT)."\">","</label>");
-		
-	if(!$pageObject->isAppearOnTabs("strSet"))
-		$xt->assign("strSet_fieldblock",true);
-	else
-		$xt->assign("strSet_tabfieldblock",true);
-	$xt->assign("strSet_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("strSet_label","<label for=\"".GetInputElementId("strSet", $id, PAGE_EDIT)."\">","</label>");
-		
-	if(!$pageObject->isAppearOnTabs("idSet1"))
-		$xt->assign("idSet1_fieldblock",true);
-	else
-		$xt->assign("idSet1_tabfieldblock",true);
-	$xt->assign("idSet1_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("idSet1_label","<label for=\"".GetInputElementId("idSet1", $id, PAGE_EDIT)."\">","</label>");
-		
-	if(!$pageObject->isAppearOnTabs("strTag"))
-		$xt->assign("strTag_fieldblock",true);
-	else
-		$xt->assign("strTag_tabfieldblock",true);
-	$xt->assign("strTag_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("strTag_label","<label for=\"".GetInputElementId("strTag", $id, PAGE_EDIT)."\">","</label>");
-		
-	if(!$pageObject->isAppearOnTabs("idTag"))
-		$xt->assign("idTag_fieldblock",true);
-	else
-		$xt->assign("idTag_tabfieldblock",true);
-	$xt->assign("idTag_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("idTag_label","<label for=\"".GetInputElementId("idTag", $id, PAGE_EDIT)."\">","</label>");
 		
 
 	$xt->assign("show_key1", htmlspecialchars($pageObject->showDBValue("idMovie", $data)));
@@ -1657,78 +1387,6 @@ if (postvalue("a")=="edited" && ($inlineedit == EDIT_INLINE || $inlineedit == ED
 	$showValues["idSet"] = $value;
 	$showFields[] = "idSet";
 		$showRawValues["idSet"] = substr($data["idSet"],0,100);
-
-//	strFilename - 
-	$value = $pageObject->showDBValue("strFilename", $data, $keylink);
-	$showValues["strFilename"] = $value;
-	$showFields[] = "strFilename";
-		$showRawValues["strFilename"] = substr($data["strFilename"],0,100);
-
-//	idPath - 
-	$value = $pageObject->showDBValue("idPath", $data, $keylink);
-	$showValues["idPath"] = $value;
-	$showFields[] = "idPath";
-		$showRawValues["idPath"] = substr($data["idPath"],0,100);
-
-//	dateAdded - 
-	$value = $pageObject->showDBValue("dateAdded", $data, $keylink);
-	$showValues["dateAdded"] = $value;
-	$showFields[] = "dateAdded";
-		$showRawValues["dateAdded"] = substr($data["dateAdded"],0,100);
-
-//	strPath - 
-	$value = $pageObject->showDBValue("strPath", $data, $keylink);
-	$showValues["strPath"] = $value;
-	$showFields[] = "strPath";
-		$showRawValues["strPath"] = substr($data["strPath"],0,100);
-
-//	strGenre - 
-	$value = $pageObject->showDBValue("strGenre", $data, $keylink);
-	$showValues["strGenre"] = $value;
-	$showFields[] = "strGenre";
-		$showRawValues["strGenre"] = substr($data["strGenre"],0,100);
-
-//	idGenre - 
-	$value = $pageObject->showDBValue("idGenre", $data, $keylink);
-	$showValues["idGenre"] = $value;
-	$showFields[] = "idGenre";
-		$showRawValues["idGenre"] = substr($data["idGenre"],0,100);
-
-//	strSet - 
-	$value = $pageObject->showDBValue("strSet", $data, $keylink);
-	$showValues["strSet"] = $value;
-	$showFields[] = "strSet";
-		$showRawValues["strSet"] = substr($data["strSet"],0,100);
-
-//	idSet1 - 
-	$value = $pageObject->showDBValue("idSet1", $data, $keylink);
-	$showValues["idSet1"] = $value;
-	$showFields[] = "idSet1";
-		$showRawValues["idSet1"] = substr($data["idSet1"],0,100);
-
-//	idMovie1 - 
-	$value = $pageObject->showDBValue("idMovie1", $data, $keylink);
-	$showValues["idMovie1"] = $value;
-	$showFields[] = "idMovie1";
-		$showRawValues["idMovie1"] = substr($data["idMovie1"],0,100);
-
-//	idGenre1 - 
-	$value = $pageObject->showDBValue("idGenre1", $data, $keylink);
-	$showValues["idGenre1"] = $value;
-	$showFields[] = "idGenre1";
-		$showRawValues["idGenre1"] = substr($data["idGenre1"],0,100);
-
-//	strTag - 
-	$value = $pageObject->showDBValue("strTag", $data, $keylink);
-	$showValues["strTag"] = $value;
-	$showFields[] = "strTag";
-		$showRawValues["strTag"] = substr($data["strTag"],0,100);
-
-//	idTag - 
-	$value = $pageObject->showDBValue("idTag", $data, $keylink);
-	$showValues["idTag"] = $value;
-	$showFields[] = "idTag";
-		$showRawValues["idTag"] = substr($data["idTag"],0,100);
 /////////////////////////////////////////////////////////////
 //	start inline output
 /////////////////////////////////////////////////////////////
@@ -1823,7 +1481,7 @@ foreach($pageObject->editFields as $fName)
 				$control[$gfName]["params"]["mode"] = "edit";
 			$controls["controls"]['mode'] = "edit";
 		}
-																																					
+																											
 	if(!$detailKeys || !in_array($fName, $detailKeys))
 		$xt->assignbyref($gfName."_editcontrol",$control[$gfName]);
 	elseif($detailKeys && in_array($fName, $detailKeys))

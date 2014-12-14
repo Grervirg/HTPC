@@ -220,7 +220,6 @@ if(!$all)
 			$strSQL.=" limit ".(($mypage-1)*$PageSize).",".$PageSize;
 		}
 		$rs = db_query($strSQL,$conn);
-		db_pageseek($rs,$PageSize,$mypage);
 	}
 	
 	//	hide colunm headers if needed
@@ -354,46 +353,6 @@ $arr = array();
 $arr['fName'] = "idSet";
 $arr['viewFormat'] = $pageObject->pSet->getViewFormat("idSet");
 $fieldsArr[] = $arr;
-$arr = array();
-$arr['fName'] = "strFilename";
-$arr['viewFormat'] = $pageObject->pSet->getViewFormat("strFilename");
-$fieldsArr[] = $arr;
-$arr = array();
-$arr['fName'] = "idPath";
-$arr['viewFormat'] = $pageObject->pSet->getViewFormat("idPath");
-$fieldsArr[] = $arr;
-$arr = array();
-$arr['fName'] = "dateAdded";
-$arr['viewFormat'] = $pageObject->pSet->getViewFormat("dateAdded");
-$fieldsArr[] = $arr;
-$arr = array();
-$arr['fName'] = "strPath";
-$arr['viewFormat'] = $pageObject->pSet->getViewFormat("strPath");
-$fieldsArr[] = $arr;
-$arr = array();
-$arr['fName'] = "strGenre";
-$arr['viewFormat'] = $pageObject->pSet->getViewFormat("strGenre");
-$fieldsArr[] = $arr;
-$arr = array();
-$arr['fName'] = "idGenre";
-$arr['viewFormat'] = $pageObject->pSet->getViewFormat("idGenre");
-$fieldsArr[] = $arr;
-$arr = array();
-$arr['fName'] = "strSet";
-$arr['viewFormat'] = $pageObject->pSet->getViewFormat("strSet");
-$fieldsArr[] = $arr;
-$arr = array();
-$arr['fName'] = "idSet1";
-$arr['viewFormat'] = $pageObject->pSet->getViewFormat("idSet1");
-$fieldsArr[] = $arr;
-$arr = array();
-$arr['fName'] = "strTag";
-$arr['viewFormat'] = $pageObject->pSet->getViewFormat("strTag");
-$fieldsArr[] = $arr;
-$arr = array();
-$arr['fName'] = "idTag";
-$arr['viewFormat'] = $pageObject->pSet->getViewFormat("idTag");
-$fieldsArr[] = $arr;
 $pageObject->setGoogleMapsParams($fieldsArr);
 
 $colsonpage=1;
@@ -519,36 +478,6 @@ if($colsonpage<1)
 //	idSet - 
 			$record["idSet_value"] = $pageObject->showDBValue("idSet", $data, $keylink);
 			$record["idSet_class"] = $pageObject->fieldClass("idSet");
-//	strFilename - 
-			$record["strFilename_value"] = $pageObject->showDBValue("strFilename", $data, $keylink);
-			$record["strFilename_class"] = $pageObject->fieldClass("strFilename");
-//	idPath - 
-			$record["idPath_value"] = $pageObject->showDBValue("idPath", $data, $keylink);
-			$record["idPath_class"] = $pageObject->fieldClass("idPath");
-//	dateAdded - 
-			$record["dateAdded_value"] = $pageObject->showDBValue("dateAdded", $data, $keylink);
-			$record["dateAdded_class"] = $pageObject->fieldClass("dateAdded");
-//	strPath - 
-			$record["strPath_value"] = $pageObject->showDBValue("strPath", $data, $keylink);
-			$record["strPath_class"] = $pageObject->fieldClass("strPath");
-//	strGenre - 
-			$record["strGenre_value"] = $pageObject->showDBValue("strGenre", $data, $keylink);
-			$record["strGenre_class"] = $pageObject->fieldClass("strGenre");
-//	idGenre - 
-			$record["idGenre_value"] = $pageObject->showDBValue("idGenre", $data, $keylink);
-			$record["idGenre_class"] = $pageObject->fieldClass("idGenre");
-//	strSet - 
-			$record["strSet_value"] = $pageObject->showDBValue("strSet", $data, $keylink);
-			$record["strSet_class"] = $pageObject->fieldClass("strSet");
-//	idSet1 - 
-			$record["idSet1_value"] = $pageObject->showDBValue("idSet1", $data, $keylink);
-			$record["idSet1_class"] = $pageObject->fieldClass("idSet1");
-//	strTag - 
-			$record["strTag_value"] = $pageObject->showDBValue("strTag", $data, $keylink);
-			$record["strTag_class"] = $pageObject->fieldClass("strTag");
-//	idTag - 
-			$record["idTag_value"] = $pageObject->showDBValue("idTag", $data, $keylink);
-			$record["idTag_class"] = $pageObject->fieldClass("idTag");
 			if($col<$colsonpage)
 				$record["endrecord_block"] = true;
 			$record["grid_recordheader"] = true;
@@ -756,46 +685,6 @@ $xt->assign("idSet_fieldheadercolumn",true);
 $xt->assign("idSet_fieldheader",true);
 $xt->assign("idSet_fieldcolumn",true);
 $xt->assign("idSet_fieldfootercolumn",true);
-$xt->assign("strFilename_fieldheadercolumn",true);
-$xt->assign("strFilename_fieldheader",true);
-$xt->assign("strFilename_fieldcolumn",true);
-$xt->assign("strFilename_fieldfootercolumn",true);
-$xt->assign("idPath_fieldheadercolumn",true);
-$xt->assign("idPath_fieldheader",true);
-$xt->assign("idPath_fieldcolumn",true);
-$xt->assign("idPath_fieldfootercolumn",true);
-$xt->assign("dateAdded_fieldheadercolumn",true);
-$xt->assign("dateAdded_fieldheader",true);
-$xt->assign("dateAdded_fieldcolumn",true);
-$xt->assign("dateAdded_fieldfootercolumn",true);
-$xt->assign("strPath_fieldheadercolumn",true);
-$xt->assign("strPath_fieldheader",true);
-$xt->assign("strPath_fieldcolumn",true);
-$xt->assign("strPath_fieldfootercolumn",true);
-$xt->assign("strGenre_fieldheadercolumn",true);
-$xt->assign("strGenre_fieldheader",true);
-$xt->assign("strGenre_fieldcolumn",true);
-$xt->assign("strGenre_fieldfootercolumn",true);
-$xt->assign("idGenre_fieldheadercolumn",true);
-$xt->assign("idGenre_fieldheader",true);
-$xt->assign("idGenre_fieldcolumn",true);
-$xt->assign("idGenre_fieldfootercolumn",true);
-$xt->assign("strSet_fieldheadercolumn",true);
-$xt->assign("strSet_fieldheader",true);
-$xt->assign("strSet_fieldcolumn",true);
-$xt->assign("strSet_fieldfootercolumn",true);
-$xt->assign("idSet1_fieldheadercolumn",true);
-$xt->assign("idSet1_fieldheader",true);
-$xt->assign("idSet1_fieldcolumn",true);
-$xt->assign("idSet1_fieldfootercolumn",true);
-$xt->assign("strTag_fieldheadercolumn",true);
-$xt->assign("strTag_fieldheader",true);
-$xt->assign("strTag_fieldcolumn",true);
-$xt->assign("strTag_fieldfootercolumn",true);
-$xt->assign("idTag_fieldheadercolumn",true);
-$xt->assign("idTag_fieldheader",true);
-$xt->assign("idTag_fieldcolumn",true);
-$xt->assign("idTag_fieldfootercolumn",true);
 
 	$record_header=array("data"=>array());
 	$record_footer=array("data"=>array());

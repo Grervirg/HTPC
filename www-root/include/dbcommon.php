@@ -32,7 +32,11 @@ $useOldMysqlLib = (bool)0;
 
 
 
-$dbname="\\\\MEDIACENTER\\Kodi\\Database\\MyVideos90.db";
+$host="10.0.1.100";
+$user="xbmc";
+$pwd="omawiq13";
+$port="";
+$sys_dbname="MyVideos90";
 
 
 
@@ -40,7 +44,7 @@ $dbname="\\\\MEDIACENTER\\Kodi\\Database\\MyVideos90.db";
 
 $cCharset = "utf-8";
 $cCodepage = 65001;
-$cMySQLNames = "";
+$cMySQLNames = "utf8";
 $gLoadSearchControls = 30;
 
 $projectPath = '';

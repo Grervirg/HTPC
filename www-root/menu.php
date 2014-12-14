@@ -27,6 +27,8 @@ $layout->containers["menu"][] = array("name"=>"menulogout","block"=>"logout_link
 
 
 
+$layout->containers["menu"][] = array("name"=>"vmenu","block"=>"menu_block","substyle"=>1);
+
 
 $layout->skins["menu"] = "menu";
 $layout->blocks["top"][] = "menu";$page_layouts["menu"] = $layout;

@@ -1,0 +1,307 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<title>{$pagetitle}</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+		<!--[if IE]>
+			<link REL="stylesheet" href="styles/defaultIE.css" type="text/css">
+			{BEGIN IEcssFiles}
+			<link REL="stylesheet" href="{$stylepathIE}" type="text/css">
+			{END IEcssFiles}
+		<![endif]-->
+	</head>
+	
+	<body class="{$stylename}" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<table   cellpadding="0" class="runner-toptable">
+			<tr class="runner-header">
+				<td class="runner-top" colspan=3>
+					
+
+
+
+
+				</td>
+			</tr>
+			<tr class="runner-body">
+				
+				<td class="runner-left {$blockclass_left}" >
+					
+				</td>	
+				
+				<td class="runner-center {$blockclass_center}">
+					
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+{BEGIN page}
+<h1>Seasonview</h1>
+<span>
+{BEGIN page_number}
+Page {$pageno} of {$maxpages} 
+{END page_number}
+</span>
+
+	<div class="runner-s-grid">	
+	<table class="runner-c runner-c-grid" cellpadding="0">
+		<thead>
+		{BEGIN grid_header}
+		<tr class="runner-toprow style1">
+			<td class="runner-cl"><img src="images/spacer.gif"></td>
+			{BEGIN record_header}
+					{BEGIN idSeason_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN idSeason_fieldheader}
+	<b>Id Season</b>
+	{END idSeason_fieldheader}
+</th>
+{END idSeason_fieldheadercolumn}
+	{BEGIN idShow_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN idShow_fieldheader}
+	<b>Id Show</b>
+	{END idShow_fieldheader}
+</th>
+{END idShow_fieldheadercolumn}
+	{BEGIN season_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN season_fieldheader}
+	<b>Season</b>
+	{END season_fieldheader}
+</th>
+{END season_fieldheadercolumn}
+	{BEGIN strPath_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN strPath_fieldheader}
+	<b>Str Path</b>
+	{END strPath_fieldheader}
+</th>
+{END strPath_fieldheadercolumn}
+	{BEGIN showTitle_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN showTitle_fieldheader}
+	<b>Show Title</b>
+	{END showTitle_fieldheader}
+</th>
+{END showTitle_fieldheadercolumn}
+	{BEGIN plot_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN plot_fieldheader}
+	<b>Plot</b>
+	{END plot_fieldheader}
+</th>
+{END plot_fieldheadercolumn}
+	{BEGIN premiered_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN premiered_fieldheader}
+	<b>Premiered</b>
+	{END premiered_fieldheader}
+</th>
+{END premiered_fieldheadercolumn}
+	{BEGIN genre_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN genre_fieldheader}
+	<b>Genre</b>
+	{END genre_fieldheader}
+</th>
+{END genre_fieldheadercolumn}
+	{BEGIN strStudio_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN strStudio_fieldheader}
+	<b>Str Studio</b>
+	{END strStudio_fieldheader}
+</th>
+{END strStudio_fieldheadercolumn}
+	{BEGIN mpaa_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN mpaa_fieldheader}
+	<b>Mpaa</b>
+	{END mpaa_fieldheader}
+</th>
+{END mpaa_fieldheadercolumn}
+	{BEGIN episodes_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN episodes_fieldheader}
+	<b>Episodes</b>
+	{END episodes_fieldheader}
+</th>
+{END episodes_fieldheadercolumn}
+	{BEGIN playCount_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN playCount_fieldheader}
+	<b>Play Count</b>
+	{END playCount_fieldheader}
+</th>
+{END playCount_fieldheadercolumn}
+		
+			{END record_header}
+			<td class="runner-cr"><img src="images/spacer.gif"></td>
+			{BEGIN endrecordheader_block}
+			<td class="runner-cs">&nbsp;</td>
+			{END endrecordheader_block}
+		</tr>
+	{END grid_header}
+		</thead>
+		<tbody>	
+		{BEGIN grid_row}
+	<tr class="runner-row style1" {$rowattrs} {$rowstyle} {$rowstyle}>
+		<td class="runner-cl"></td>
+		{BEGIN grid_record}
+				{BEGIN idSeason_fieldcolumn}
+<td  class="runner-cc {$idSeason_class}" {$idSeason_style}>
+	{$idSeason_value}
+</td>
+{END idSeason_fieldcolumn}
+	{BEGIN idShow_fieldcolumn}
+<td  class="runner-cc {$idShow_class}" {$idShow_style}>
+	{$idShow_value}
+</td>
+{END idShow_fieldcolumn}
+	{BEGIN season_fieldcolumn}
+<td  class="runner-cc {$season_class}" {$season_style}>
+	{$season_value}
+</td>
+{END season_fieldcolumn}
+	{BEGIN strPath_fieldcolumn}
+<td  class="runner-cc {$strPath_class}" {$strPath_style}>
+	{$strPath_value}
+</td>
+{END strPath_fieldcolumn}
+	{BEGIN showTitle_fieldcolumn}
+<td  class="runner-cc {$showTitle_class}" {$showTitle_style}>
+	{$showTitle_value}
+</td>
+{END showTitle_fieldcolumn}
+	{BEGIN plot_fieldcolumn}
+<td  class="runner-cc {$plot_class}" {$plot_style}>
+	{$plot_value}
+</td>
+{END plot_fieldcolumn}
+	{BEGIN premiered_fieldcolumn}
+<td  class="runner-cc {$premiered_class}" {$premiered_style}>
+	{$premiered_value}
+</td>
+{END premiered_fieldcolumn}
+	{BEGIN genre_fieldcolumn}
+<td  class="runner-cc {$genre_class}" {$genre_style}>
+	{$genre_value}
+</td>
+{END genre_fieldcolumn}
+	{BEGIN strStudio_fieldcolumn}
+<td  class="runner-cc {$strStudio_class}" {$strStudio_style}>
+	{$strStudio_value}
+</td>
+{END strStudio_fieldcolumn}
+	{BEGIN mpaa_fieldcolumn}
+<td  class="runner-cc {$mpaa_class}" {$mpaa_style}>
+	{$mpaa_value}
+</td>
+{END mpaa_fieldcolumn}
+	{BEGIN episodes_fieldcolumn}
+<td  class="runner-cc {$episodes_class}" {$episodes_style}>
+	{$episodes_value}
+</td>
+{END episodes_fieldcolumn}
+	{BEGIN playCount_fieldcolumn}
+<td  class="runner-cc {$playCount_class}" {$playCount_style}>
+	{$playCount_value}
+</td>
+{END playCount_fieldcolumn}
+
+		{END grid_record}
+		<td class="runner-cr"></td>
+		{BEGIN endrecord_block}
+		<td class="runner-cs">&nbsp;</td>
+		{END endrecord_block}
+	</tr>
+{END grid_row}
+										
+								<tr class="runner-bottomrow style1">
+									<td class="runner-cl"><img src="images/spacer.gif"></td>
+									{BEGIN record_footer}
+									{BEGIN idSeason_fieldfootercolumn}
+<td class="runner-cc "></td>
+{END idSeason_fieldfootercolumn}
+{BEGIN idShow_fieldfootercolumn}
+<td class="runner-cc "></td>
+{END idShow_fieldfootercolumn}
+{BEGIN season_fieldfootercolumn}
+<td class="runner-cc "></td>
+{END season_fieldfootercolumn}
+{BEGIN strPath_fieldfootercolumn}
+<td class="runner-cc "></td>
+{END strPath_fieldfootercolumn}
+{BEGIN showTitle_fieldfootercolumn}
+<td class="runner-cc "></td>
+{END showTitle_fieldfootercolumn}
+{BEGIN plot_fieldfootercolumn}
+<td class="runner-cc "></td>
+{END plot_fieldfootercolumn}
+{BEGIN premiered_fieldfootercolumn}
+<td class="runner-cc "></td>
+{END premiered_fieldfootercolumn}
+{BEGIN genre_fieldfootercolumn}
+<td class="runner-cc "></td>
+{END genre_fieldfootercolumn}
+{BEGIN strStudio_fieldfootercolumn}
+<td class="runner-cc "></td>
+{END strStudio_fieldfootercolumn}
+{BEGIN mpaa_fieldfootercolumn}
+<td class="runner-cc "></td>
+{END mpaa_fieldfootercolumn}
+{BEGIN episodes_fieldfootercolumn}
+<td class="runner-cc "></td>
+{END episodes_fieldfootercolumn}
+{BEGIN playCount_fieldfootercolumn}
+<td class="runner-cc runner-clast"></td>
+{END playCount_fieldfootercolumn}
+
+									{END record_footer}
+									<td class="runner-cr"><img src="images/spacer.gif"></td>
+									{BEGIN endrecordtotals_block}
+									<td class="runner-cs"></td>
+									{END endrecordtotals_block}
+								</tr>
+
+		</tbody>
+	</table>
+</div>	
+{END page}
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+				</td>	
+
+				<td class="runner-right {$blockclass_right}">
+					
+				</td>	
+			</tr>
+			<tr class="runner-footer">
+				<td class="runner-bottom" colspan=3>
+					<!--%%bottom%%-->
+				</td>
+			</tr>
+		</table>
+		{$footer}
+	{END body}
+	</body>
+</html>

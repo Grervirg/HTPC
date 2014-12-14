@@ -1,0 +1,217 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<title>{$pagetitle}</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+		<!--[if IE]>
+			<link REL="stylesheet" href="styles/defaultIE.css" type="text/css">
+			{BEGIN IEcssFiles}
+			<link REL="stylesheet" href="{$stylepathIE}" type="text/css">
+			{END IEcssFiles}
+		<![endif]-->
+	</head>
+	
+	<body class="{$stylename}" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<table   cellpadding="0" class="runner-toptable">
+			<tr class="runner-header">
+				<td class="runner-top" colspan=3>
+					
+
+
+
+
+				</td>
+			</tr>
+			<tr class="runner-body">
+				
+				<td class="runner-left {$blockclass_left}" >
+					
+				</td>	
+				
+				<td class="runner-center {$blockclass_center}">
+					
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+{BEGIN page}
+<h1>Tvshowcounts</h1>
+<span>
+{BEGIN page_number}
+Page {$pageno} of {$maxpages} 
+{END page_number}
+</span>
+
+	<div class="runner-s-grid">	
+	<table class="runner-c runner-c-grid" cellpadding="0">
+		<thead>
+		{BEGIN grid_header}
+		<tr class="runner-toprow style1">
+			<td class="runner-cl"><img src="images/spacer.gif"></td>
+			{BEGIN record_header}
+					{BEGIN idShow_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN idShow_fieldheader}
+	<b>Id Show</b>
+	{END idShow_fieldheader}
+</th>
+{END idShow_fieldheadercolumn}
+	{BEGIN lastPlayed_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN lastPlayed_fieldheader}
+	<b>Last Played</b>
+	{END lastPlayed_fieldheader}
+</th>
+{END lastPlayed_fieldheadercolumn}
+	{BEGIN totalCount_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN totalCount_fieldheader}
+	<b>Total Count</b>
+	{END totalCount_fieldheader}
+</th>
+{END totalCount_fieldheadercolumn}
+	{BEGIN watchedcount_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN watchedcount_fieldheader}
+	<b>Watchedcount</b>
+	{END watchedcount_fieldheader}
+</th>
+{END watchedcount_fieldheadercolumn}
+	{BEGIN totalSeasons_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN totalSeasons_fieldheader}
+	<b>Total Seasons</b>
+	{END totalSeasons_fieldheader}
+</th>
+{END totalSeasons_fieldheadercolumn}
+	{BEGIN dateAdded_fieldheadercolumn}
+<th class="runner-cc">
+	{BEGIN dateAdded_fieldheader}
+	<b>Date Added</b>
+	{END dateAdded_fieldheader}
+</th>
+{END dateAdded_fieldheadercolumn}
+		
+			{END record_header}
+			<td class="runner-cr"><img src="images/spacer.gif"></td>
+			{BEGIN endrecordheader_block}
+			<td class="runner-cs">&nbsp;</td>
+			{END endrecordheader_block}
+		</tr>
+	{END grid_header}
+		</thead>
+		<tbody>	
+		{BEGIN grid_row}
+	<tr class="runner-row style1" {$rowattrs} {$rowstyle} {$rowstyle}>
+		<td class="runner-cl"></td>
+		{BEGIN grid_record}
+				{BEGIN idShow_fieldcolumn}
+<td  class="runner-cc {$idShow_class}" {$idShow_style}>
+	{$idShow_value}
+</td>
+{END idShow_fieldcolumn}
+	{BEGIN lastPlayed_fieldcolumn}
+<td  class="runner-cc {$lastPlayed_class}" {$lastPlayed_style}>
+	{$lastPlayed_value}
+</td>
+{END lastPlayed_fieldcolumn}
+	{BEGIN totalCount_fieldcolumn}
+<td  class="runner-cc {$totalCount_class}" {$totalCount_style}>
+	{$totalCount_value}
+</td>
+{END totalCount_fieldcolumn}
+	{BEGIN watchedcount_fieldcolumn}
+<td  class="runner-cc {$watchedcount_class}" {$watchedcount_style}>
+	{$watchedcount_value}
+</td>
+{END watchedcount_fieldcolumn}
+	{BEGIN totalSeasons_fieldcolumn}
+<td  class="runner-cc {$totalSeasons_class}" {$totalSeasons_style}>
+	{$totalSeasons_value}
+</td>
+{END totalSeasons_fieldcolumn}
+	{BEGIN dateAdded_fieldcolumn}
+<td  class="runner-cc {$dateAdded_class}" {$dateAdded_style}>
+	{$dateAdded_value}
+</td>
+{END dateAdded_fieldcolumn}
+
+		{END grid_record}
+		<td class="runner-cr"></td>
+		{BEGIN endrecord_block}
+		<td class="runner-cs">&nbsp;</td>
+		{END endrecord_block}
+	</tr>
+{END grid_row}
+										
+								<tr class="runner-bottomrow style1">
+									<td class="runner-cl"><img src="images/spacer.gif"></td>
+									{BEGIN record_footer}
+									{BEGIN idShow_fieldfootercolumn}
+<td class="runner-cc "></td>
+{END idShow_fieldfootercolumn}
+{BEGIN lastPlayed_fieldfootercolumn}
+<td class="runner-cc "></td>
+{END lastPlayed_fieldfootercolumn}
+{BEGIN totalCount_fieldfootercolumn}
+<td class="runner-cc "></td>
+{END totalCount_fieldfootercolumn}
+{BEGIN watchedcount_fieldfootercolumn}
+<td class="runner-cc "></td>
+{END watchedcount_fieldfootercolumn}
+{BEGIN totalSeasons_fieldfootercolumn}
+<td class="runner-cc "></td>
+{END totalSeasons_fieldfootercolumn}
+{BEGIN dateAdded_fieldfootercolumn}
+<td class="runner-cc runner-clast"></td>
+{END dateAdded_fieldfootercolumn}
+
+									{END record_footer}
+									<td class="runner-cr"><img src="images/spacer.gif"></td>
+									{BEGIN endrecordtotals_block}
+									<td class="runner-cs"></td>
+									{END endrecordtotals_block}
+								</tr>
+
+		</tbody>
+	</table>
+</div>	
+{END page}
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+				</td>	
+
+				<td class="runner-right {$blockclass_right}">
+					
+				</td>	
+			</tr>
+			<tr class="runner-footer">
+				<td class="runner-bottom" colspan=3>
+					<!--%%bottom%%-->
+				</td>
+			</tr>
+		</table>
+		{$footer}
+	{END body}
+	</body>
+</html>

@@ -1536,6 +1536,18 @@ function GetTableURL($table = "")
 		$table=$strTableName;
 	if("Movies" == $table) 
 		return "Movies";
+	if("movieview" == $table) 
+		return "movieview";
+	if("episodeview" == $table) 
+		return "episodeview";
+	if("musicvideoview" == $table) 
+		return "musicvideoview";
+	if("seasonview" == $table) 
+		return "seasonview";
+	if("tvshowview" == $table) 
+		return "tvshowview";
+	if("tvshowcounts" == $table) 
+		return "tvshowcounts";
 }
 
 //	return strTableName by short table name
@@ -1546,6 +1558,18 @@ function GetTableByShort($shortTName = "")
 		return false;
 	if("Movies" == $shortTName) 
 		return "Movies";
+	if("movieview" == $shortTName) 
+		return "movieview";
+	if("episodeview" == $shortTName) 
+		return "episodeview";
+	if("musicvideoview" == $shortTName) 
+		return "musicvideoview";
+	if("seasonview" == $shortTName) 
+		return "seasonview";
+	if("tvshowview" == $shortTName) 
+		return "tvshowview";
+	if("tvshowcounts" == $shortTName) 
+		return "tvshowcounts";
 }
 
 //	A

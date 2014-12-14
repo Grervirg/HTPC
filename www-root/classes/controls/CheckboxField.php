@@ -62,7 +62,8 @@ class CheckboxField extends EditControl
 					$whereStr .= " and ".$fullFieldName."<>'' ";
 				} 
 				$whereStr .= " and ".$fullFieldName." is not null)";
-																			return $whereStr;
+													$whereStr .= " and abs(cast(".$fullFieldName." as signed)) > 0";	
+										return $whereStr;
 			}
 			elseif($SearchFor == "off")
 			{
@@ -72,7 +73,8 @@ class CheckboxField extends EditControl
 					$whereStr .= " or ".GetFullFieldName($this->field)."='' "; 
 				}
 				$whereStr .= " or ".GetFullFieldName($this->field)." is null)";
-																			return $whereStr;
+													$whereStr .= " or cast(".$fullFieldName." as unsigned) = 0";	
+										return $whereStr;
 			}
 		}
 		else

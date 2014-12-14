@@ -185,6 +185,18 @@ function checkTableName($shortTName, $type=false)
 	
 	if ("Movies" == $shortTName && ($type===false || ($type!==false && $type == 1)))
 		return true;
+	if ("movieview" == $shortTName && ($type===false || ($type!==false && $type == 0)))
+		return true;
+	if ("episodeview" == $shortTName && ($type===false || ($type!==false && $type == 0)))
+		return true;
+	if ("musicvideoview" == $shortTName && ($type===false || ($type!==false && $type == 0)))
+		return true;
+	if ("seasonview" == $shortTName && ($type===false || ($type!==false && $type == 0)))
+		return true;
+	if ("tvshowview" == $shortTName && ($type===false || ($type!==false && $type == 0)))
+		return true;
+	if ("tvshowcounts" == $shortTName && ($type===false || ($type!==false && $type == 0)))
+		return true;
 	return false;
 }
 
@@ -219,6 +231,12 @@ function GetTablesList($pdfMode = false)
 {
 	$arr = array();
 		$arr[]="Movies";
+		$arr[]="movieview";
+		$arr[]="episodeview";
+		$arr[]="musicvideoview";
+		$arr[]="seasonview";
+		$arr[]="tvshowview";
+		$arr[]="tvshowcounts";
 	return $arr;
 }
 
@@ -835,9 +853,10 @@ function StrWhereExpression($strField, $SearchFor, $strSearchOption, $SearchFor2
 	
 	$isdb2=false;
 
-	$isMysql = false;
+	$isMysql = true;
 
 	$btexttype=IsTextType($type);
+	$btexttype=false;
 
 	if($strSearchOption=='Empty')
 	{
@@ -996,8 +1015,9 @@ function StrWhereAdv($strField, $SearchFor, $strSearchOption, $SearchFor2, $etyp
 	$isdb2=false;
 	
 	$btexttype=IsTextType($type);
+	$btexttype=false;
 
-	$isMysql = false;
+	$isMysql = true;
 
 	if(IsBinaryType($type))
 		return "";
@@ -1359,6 +1379,36 @@ function GetUserPermissionsStatic($table="")
 	{
 	return "ADESPI";// grant all by default
 	}
+//	default permissions	
+	if($table=="movieview")
+	{
+	return "ADESPI";// grant all by default
+	}
+//	default permissions	
+	if($table=="episodeview")
+	{
+	return "ADESPI";// grant all by default
+	}
+//	default permissions	
+	if($table=="musicvideoview")
+	{
+	return "ADESPI";// grant all by default
+	}
+//	default permissions	
+	if($table=="seasonview")
+	{
+	return "ADESPI";// grant all by default
+	}
+//	default permissions	
+	if($table=="tvshowview")
+	{
+	return "ADESPI";// grant all by default
+	}
+//	default permissions	
+	if($table=="tvshowcounts")
+	{
+	return "ADESPI";// grant all by default
+	}
 }
 
 function GetUserPermissions($table="")
@@ -1368,6 +1418,30 @@ function GetUserPermissions($table="")
 		$table = $strTableName;
 	$permissions = "";
 	if($table=="Movies")
+	{
+			$permissions =  "ADESPIM";
+	}
+	if($table=="movieview")
+	{
+			$permissions =  "ADESPIM";
+	}
+	if($table=="episodeview")
+	{
+			$permissions =  "ADESPIM";
+	}
+	if($table=="musicvideoview")
+	{
+			$permissions =  "ADESPIM";
+	}
+	if($table=="seasonview")
+	{
+			$permissions =  "ADESPIM";
+	}
+	if($table=="tvshowview")
+	{
+			$permissions =  "ADESPIM";
+	}
+	if($table=="tvshowcounts")
 	{
 			$permissions =  "ADESPIM";
 	}
@@ -2037,7 +2111,9 @@ function buildLookupSQL($pageType, $field, $table, $parentVal, $childVal = "",
 		{
 			$LookupSQL.= " ORDER BY ".AddTableWrappers($lookupTable).".".$strOrderBy;
 		}
-							}
+				if($oneRecordMode)
+			$LookupSQL.=" limit 0,1";
+					}
 	return $LookupSQL;
 }
 
@@ -2507,10 +2583,7 @@ function DoInsertRecordSQL($table,&$avalues,&$blobfields, $pageid, &$pageObject,
 				$keys[$k]=$avalues[$k];
 			elseif($pageObject->pSet->isAutoincField($k))
 			{
-							$mystrSQL = "SELECT MAX(".AddFieldWrappers($k).") FROM ".AddTableWrappers($table);
-				$myrs=db_query($mystrSQL,$conn);
-				if($mydata = db_fetch_numarray($myrs));
-					$keys[$k] = $mydata[0];
+							$keys[$k]=GetMySQLLastInsertID();
 			}
 			else
 				$failed_inline_add = true;

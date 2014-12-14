@@ -78,7 +78,7 @@ class RightsPage extends ListPage
 		$this->groupsArr[] = array(-2, "<"."Default".">");
 		$this->groupsArr[] = array(-3, "<"."Guest".">");
 		
-		$trs = db_query("select , from \"uggroups\" order by ", $this->conn);
+		$trs = db_query("select , from `uggroups` order by ", $this->conn);
 		
 		while($tdata = db_fetch_numarray($trs))
 		{
@@ -111,7 +111,7 @@ class RightsPage extends ListPage
 	 */
 	function getRights() 
 	{
-		$trs = db_query("select ,, from \"ugrights\" order by ", $this->conn);
+		$trs = db_query("select ,, from `ugrights` order by ", $this->conn);
 		while($tdata = db_fetch_numarray($trs))
 		{
 			if(!array_key_exists($tdata[1],$this->nonAdminTablesRightsArr))

@@ -867,7 +867,9 @@ class SQLQuery extends SQLEntity
 			}
 		}
 		
-								
+				if($oneRecordMode)
+			$sql.=" limit 0,1";
+						
 		return $sql;
 	}
 	
@@ -1203,7 +1205,15 @@ class SQLQuery extends SQLEntity
 		
 		if(strlen($sqlGroupBy))
 		{
-					$countstr = "select count(*) from (".SQLQuery::gSQLWhere_having($sqlHead,$sqlFrom,$sqlWhere,$sqlGroupBy, $sqlHaving,$where,$having,$criteria).") a";
+					if($bSubqueriesSupported)
+			{
+				$countstr = "select count(*) from (".SQLQuery::gSQLWhere_having($sqlHead,$sqlFrom,$sqlWhere,$sqlGroupBy, $sqlHaving,$where,$having,$criteria).") a";
+			}
+			else
+			{
+				$countstr = SQLQuery::gSQLWhere_having($sqlHead,$sqlFrom,$sqlWhere,$sqlGroupBy, $sqlHaving,$where,$having,$criteria);
+				return GetMySQL4RowCount($countstr);
+			}
 		}
 		else
 		{

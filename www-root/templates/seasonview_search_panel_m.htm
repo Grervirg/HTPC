@@ -1,0 +1,80 @@
+<div class="searchOptions bottomPanelBorder" {$srchOpt_attrs}>
+	<!-- Search panel content -->
+	<div class="srchCritTop" style="display: none;">
+		Criteria:&nbsp;
+		<input type="radio" name="srchType" class="runner-radio-button" {$all_checkbox}> {BEGIN all_checkbox_label}all{END all_checkbox_label}
+		&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="srchType" class="runner-radio-button" {$any_checkbox}> {BEGIN any_checkbox_label}any{END any_checkbox_label}
+	</div>
+	
+	<div class="addOption">
+		<span class="runner-btnframe">
+		<span class="runner-btnleft"></span>
+		<span class="runner-btnright"></span>
+		<a href="#" id="showHideControlChooseMenu{$id}" class="runner-button" {$showHideCtrls_attrs}>Add field</a>
+		</span>
+		&nbsp;&nbsp;&nbsp;
+		<span class="runner-btnframe">
+		<span class="runner-btnleft"></span>
+		<span class="runner-btnright"></span>
+		<a href="#" id="showHideSearchType{$id}" class="runner-button" {$showHideCtrlsOpt_attrs}>{$showHideOpt_mess}</a>
+		</span>
+	</div>
+	
+	<!-- choose controls div -->
+	<div class="runner-panel controlChooseMenu" {$controlChooseMenuDiv_attrs}>
+		{BEGIN addSearch_idSeason}
+			<a href="#" id="addSearchControl_idSeason" class="addSearchControl" {$addSearchControl_idSeason_attrs}>Id Season</a><br>
+		{END addSearch_idSeason}
+		{BEGIN addSearch_idShow}
+			<a href="#" id="addSearchControl_idShow" class="addSearchControl" {$addSearchControl_idShow_attrs}>Id Show</a><br>
+		{END addSearch_idShow}
+		{BEGIN addSearch_season}
+			<a href="#" id="addSearchControl_season" class="addSearchControl" {$addSearchControl_season_attrs}>Season</a><br>
+		{END addSearch_season}
+		{BEGIN addSearch_strPath}
+			<a href="#" id="addSearchControl_strPath" class="addSearchControl" {$addSearchControl_strPath_attrs}>Str Path</a><br>
+		{END addSearch_strPath}
+		{BEGIN addSearch_showTitle}
+			<a href="#" id="addSearchControl_showTitle" class="addSearchControl" {$addSearchControl_showTitle_attrs}>Show Title</a><br>
+		{END addSearch_showTitle}
+		{BEGIN addSearch_plot}
+			<a href="#" id="addSearchControl_plot" class="addSearchControl" {$addSearchControl_plot_attrs}>Plot</a><br>
+		{END addSearch_plot}
+		{BEGIN addSearch_premiered}
+			<a href="#" id="addSearchControl_premiered" class="addSearchControl" {$addSearchControl_premiered_attrs}>Premiered</a><br>
+		{END addSearch_premiered}
+		{BEGIN addSearch_genre}
+			<a href="#" id="addSearchControl_genre" class="addSearchControl" {$addSearchControl_genre_attrs}>Genre</a><br>
+		{END addSearch_genre}
+		{BEGIN addSearch_strStudio}
+			<a href="#" id="addSearchControl_strStudio" class="addSearchControl" {$addSearchControl_strStudio_attrs}>Str Studio</a><br>
+		{END addSearch_strStudio}
+		{BEGIN addSearch_mpaa}
+			<a href="#" id="addSearchControl_mpaa" class="addSearchControl" {$addSearchControl_mpaa_attrs}>Mpaa</a><br>
+		{END addSearch_mpaa}
+		{BEGIN addSearch_episodes}
+			<a href="#" id="addSearchControl_episodes" class="addSearchControl" {$addSearchControl_episodes_attrs}>Episodes</a><br>
+		{END addSearch_episodes}
+		{BEGIN addSearch_playCount}
+			<a href="#" id="addSearchControl_playCount" class="addSearchControl" {$addSearchControl_playCount_attrs}>Play Count</a><br>
+		{END addSearch_playCount}
+	</div>
+	
+	<div class="controlsBlock">
+		{BEGIN searchCtrlBlock}
+		<div class="srchPanelRow" {$filterRow_attrs}>
+			<div class="srchPanelCell">{$delCtrlButt}&nbsp;{$fLabel}:&nbsp;</div>
+			<div class="srchPanelCell srchPanelCell2">{$searchtype} {$searchcontrol} {$searchcontrol1}</div>
+		</div>
+		{END searchCtrlBlock}
+	</div>
+		
+	<div class="bottomSearchButt" align="left" {$bottomSearchButt_attrs}>
+		<span class="runner-btnframe">
+		<span class="runner-btnleft"></span>
+		<span class="runner-btnright"></span>
+		<a href="#" class="runner-button" {$searchbutton_attrs}>Search</a>
+		</span>
+	</div>
+</div>

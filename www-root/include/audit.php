@@ -313,6 +313,30 @@ class AuditTrailTable
 		{
 			return false;
 		}
+		if($table=="movieview")
+		{
+			return false;
+		}
+		if($table=="episodeview")
+		{
+			return false;
+		}
+		if($table=="musicvideoview")
+		{
+			return false;
+		}
+		if($table=="seasonview")
+		{
+			return false;
+		}
+		if($table=="tvshowview")
+		{
+			return false;
+		}
+		if($table=="tvshowcounts")
+		{
+			return false;
+		}
 	}
 }
 
@@ -606,6 +630,30 @@ class AuditTrailFile
 	function logValueEnable($table)
 	{
 		if($table=="Movies")
+		{
+			return false;
+		}
+		if($table=="movieview")
+		{
+			return false;
+		}
+		if($table=="episodeview")
+		{
+			return false;
+		}
+		if($table=="musicvideoview")
+		{
+			return false;
+		}
+		if($table=="seasonview")
+		{
+			return false;
+		}
+		if($table=="tvshowview")
+		{
+			return false;
+		}
+		if($table=="tvshowcounts")
 		{
 			return false;
 		}

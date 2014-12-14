@@ -130,7 +130,8 @@ class RunnerCipherer{
 		
 		
 		
-				
+					$result = "cast(DES_DECRYPT(unhex(%s), '%s') as char)";	
+		
 				
 		if($result != "")
 		{
@@ -158,7 +159,8 @@ class RunnerCipherer{
 		
 		
 		
-				
+					$result = "hex(DES_ENCRYPT(%s, '%s'))";	
+		
 				
 		if($result != "")
 		{

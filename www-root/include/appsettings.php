@@ -210,7 +210,7 @@ define("NOT_EMPTY", "NOT Empty");
 
 $globalSettings = array();
 $globalSettings["nLoginMethod"] = 0;
-$globalSettings["dbType"] = 6;
+$globalSettings["dbType"] = 0;
 
 
 
@@ -262,8 +262,8 @@ $globalSettings["override"] = array();
 $wr_is_standalone = false;
 $WRAdminPagePassword = "";
 
-$strLeftWrapper = "\"";
-$strRightWrapper = "\"";
+$strLeftWrapper = "`";
+$strRightWrapper = "`";
 
 $cLoginTable = "";
 $cDisplayNameField = "";
@@ -282,7 +282,7 @@ $cPasswordFieldType	= 200;
 $cEmailFieldType = 200;
 
 
-$nDBType = 6;
+$nDBType = 0;
 
 $useAJAX = true;
 $suggestAllContent = true;
@@ -300,6 +300,12 @@ $mlang_charsets = array();
 $tableCaptions = array();
 $tableCaptions["English"] = array();
 $tableCaptions["English"]["Movies"] = "Movies";
+$tableCaptions["English"]["movieview"] = "Movieview";
+$tableCaptions["English"]["episodeview"] = "Episodeview";
+$tableCaptions["English"]["musicvideoview"] = "Musicvideoview";
+$tableCaptions["English"]["seasonview"] = "Seasonview";
+$tableCaptions["English"]["tvshowview"] = "Tvshowview";
+$tableCaptions["English"]["tvshowcounts"] = "Tvshowcounts";
 
 $globalEvents = new class_GlobalEvents;
 $tableEvents = array();

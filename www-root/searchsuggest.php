@@ -129,8 +129,7 @@ foreach($allSearchFields as $f)
 				, $gQuery->Having()->toSql($gQuery), $where, $having);
 		}
 		
-			$strSQL = SQLQuery::gSQLWhere_having($sqlHead, $gQuery->FromToSql(), $gQuery->WhereToSql(), $gQuery->GroupByToSql()
-			, $gQuery->Having()->toSql($gQuery), $where, $having);
+			$strSQL .= " ORDER BY 1 LIMIT 10 ";
 		$rs=db_query($strSQL,$conn);
 		$i=0;
 		

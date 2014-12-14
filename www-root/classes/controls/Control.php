@@ -75,6 +75,7 @@ class EditControl
 		$this->strLabel = $pageObject->pSetEdit->label($field);
 		$this->type = $pageObject->pSetEdit->getFieldType($this->field);
 		
+		$this->isMysql = true;
 
 		$this->searchOptions[CONTAINS] = "Contains";
 		$this->searchOptions[EQUALS] = "Equals";
@@ -199,8 +200,7 @@ class EditControl
 	
 	function baseSQLWhere($strSearchOption)
 	{
-				$this->btexttype = IsTextType($this->type);
-		
+				
 		if(IsBinaryType($this->type))
 			return false;
 			if($strSearchOption=='Empty')

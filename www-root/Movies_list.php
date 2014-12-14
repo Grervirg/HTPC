@@ -87,6 +87,11 @@ $layout->containers["toplinks"][] = array("name"=>"toplinks_export","block"=>"ex
 
 $layout->skins["toplinks"] = "2";
 $layout->blocks["top"][] = "toplinks";
+$layout->containers["hmenu"] = array();
+
+$layout->containers["hmenu"][] = array("name"=>"hmenu","block"=>"menu_block","substyle"=>1);
+
+
 $layout->skins["hmenu"] = "hmenu";
 $layout->blocks["top"][] = "hmenu";
 $layout->containers["search"] = array();
@@ -142,8 +147,8 @@ elseif(postvalue("mode") == "lookup")
 	include("classes/searchpanellookup.php");
 	$mode=LIST_LOOKUP;
 	//determine which field should be used to select values
-			$params["lookupSelectField"] = "idTag";
-																																			}
+			$params["lookupSelectField"] = "idMovie";
+																									}
 elseif(postvalue("mode")=="listdetails")
 {
 	

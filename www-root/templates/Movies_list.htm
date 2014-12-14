@@ -137,6 +137,36 @@
 
 
 
+{BEGIN container_hmenu}
+<table class="runner-c runner-c-hmenu" cellpadding="0" >
+<tr class="{$cheaderclass_hmenu}">
+<td class="runner-cl"><img src="images/spacer.gif"></td>
+<td class="runner-cc"></td><td class="runner-cr"><img src="images/spacer.gif"></td>
+</tr>
+<tr class="runner-row style1">
+<td class="runner-cl"></td>
+<td class="runner-cc">
+<table border="0" cellpadding="0" class="runner-hc">
+<tr>
+
+{BEGIN menu_block}
+<td  class="runner-cc runner-bl runner-b-hmenu" {$brickclass_hmenu}><span>{$mainmenu horizontal}
+</span></td>
+{END menu_block}
+
+<td class="runner-cc filler"></td>
+</tr>
+</table></td>
+<td class="runner-cr"></td>
+</tr>
+
+<tr class="{$cfooterclass_hmenu}">
+<td class="runner-cl"><img src="images/spacer.gif"></td>
+<td class="runner-cc"></td><td class="runner-cr"><img src="images/spacer.gif"></td>
+</tr>
+</table>
+{END container_hmenu}
+
 
 
 {BEGIN container_search}
@@ -421,107 +451,7 @@
 									</th>
 									{END checkbox_column}
 
-																										{BEGIN idTag_fieldheadercolumn}
-									<th class="runner-cc ">
-									{BEGIN idTag_fieldheader}
-																				<a {$idTag_orderlinkattrs}>
-											Id Tag
-										</a>
-									{END idTag_fieldheader}
-									</th>
-									{END idTag_fieldheadercolumn}
-
-																	{BEGIN idSet1_fieldheadercolumn}
-									<th class="runner-cc ">
-									{BEGIN idSet1_fieldheader}
-																				<a {$idSet1_orderlinkattrs}>
-											Id Set1
-										</a>
-									{END idSet1_fieldheader}
-									</th>
-									{END idSet1_fieldheadercolumn}
-
-																	{BEGIN strSet_fieldheadercolumn}
-									<th class="runner-cc ">
-									{BEGIN strSet_fieldheader}
-																				<a {$strSet_orderlinkattrs}>
-											Str Set
-										</a>
-									{END strSet_fieldheader}
-									</th>
-									{END strSet_fieldheadercolumn}
-
-																	{BEGIN idGenre_fieldheadercolumn}
-									<th class="runner-cc ">
-									{BEGIN idGenre_fieldheader}
-																				<a {$idGenre_orderlinkattrs}>
-											Id Genre
-										</a>
-									{END idGenre_fieldheader}
-									</th>
-									{END idGenre_fieldheadercolumn}
-
-																	{BEGIN strGenre_fieldheadercolumn}
-									<th class="runner-cc ">
-									{BEGIN strGenre_fieldheader}
-																				<a {$strGenre_orderlinkattrs}>
-											Str Genre
-										</a>
-									{END strGenre_fieldheader}
-									</th>
-									{END strGenre_fieldheadercolumn}
-
-																	{BEGIN strPath_fieldheadercolumn}
-									<th class="runner-cc ">
-									{BEGIN strPath_fieldheader}
-																				<a {$strPath_orderlinkattrs}>
-											Str Path
-										</a>
-									{END strPath_fieldheader}
-									</th>
-									{END strPath_fieldheadercolumn}
-
-																	{BEGIN dateAdded_fieldheadercolumn}
-									<th class="runner-cc ">
-									{BEGIN dateAdded_fieldheader}
-																				<a {$dateAdded_orderlinkattrs}>
-											Date Added
-										</a>
-									{END dateAdded_fieldheader}
-									</th>
-									{END dateAdded_fieldheadercolumn}
-
-																	{BEGIN idPath_fieldheadercolumn}
-									<th class="runner-cc ">
-									{BEGIN idPath_fieldheader}
-																				<a {$idPath_orderlinkattrs}>
-											Id Path
-										</a>
-									{END idPath_fieldheader}
-									</th>
-									{END idPath_fieldheadercolumn}
-
-																	{BEGIN strFilename_fieldheadercolumn}
-									<th class="runner-cc ">
-									{BEGIN strFilename_fieldheader}
-																				<a {$strFilename_orderlinkattrs}>
-											Str Filename
-										</a>
-									{END strFilename_fieldheader}
-									</th>
-									{END strFilename_fieldheadercolumn}
-
-																	{BEGIN strTag_fieldheadercolumn}
-									<th class="runner-cc ">
-									{BEGIN strTag_fieldheader}
-																				<a {$strTag_orderlinkattrs}>
-											Str Tag
-										</a>
-									{END strTag_fieldheader}
-									</th>
-									{END strTag_fieldheadercolumn}
-
-																	{BEGIN idMovie_fieldheadercolumn}
+																										{BEGIN idMovie_fieldheadercolumn}
 									<th class="runner-cc ">
 									{BEGIN idMovie_fieldheader}
 																				<a {$idMovie_orderlinkattrs}>
@@ -833,67 +763,7 @@
 									{END checkbox_column}
 
 
-										{BEGIN idTag_fieldcolumn}
-	<td class="runner-cc  {$idTag_class}" {$idTag_style}>
-		{$idTag_value}
-	</td>
-{END idTag_fieldcolumn}
-
-	{BEGIN idSet1_fieldcolumn}
-	<td class="runner-cc  {$idSet1_class}" {$idSet1_style}>
-		{$idSet1_value}
-	</td>
-{END idSet1_fieldcolumn}
-
-	{BEGIN strSet_fieldcolumn}
-	<td class="runner-cc  {$strSet_class}" {$strSet_style}>
-		{$strSet_value}
-	</td>
-{END strSet_fieldcolumn}
-
-	{BEGIN idGenre_fieldcolumn}
-	<td class="runner-cc  {$idGenre_class}" {$idGenre_style}>
-		{$idGenre_value}
-	</td>
-{END idGenre_fieldcolumn}
-
-	{BEGIN strGenre_fieldcolumn}
-	<td class="runner-cc  {$strGenre_class}" {$strGenre_style}>
-		{$strGenre_value}
-	</td>
-{END strGenre_fieldcolumn}
-
-	{BEGIN strPath_fieldcolumn}
-	<td class="runner-cc  {$strPath_class}" {$strPath_style}>
-		{$strPath_value}
-	</td>
-{END strPath_fieldcolumn}
-
-	{BEGIN dateAdded_fieldcolumn}
-	<td class="runner-cc  {$dateAdded_class}" {$dateAdded_style}>
-		{$dateAdded_value}
-	</td>
-{END dateAdded_fieldcolumn}
-
-	{BEGIN idPath_fieldcolumn}
-	<td class="runner-cc  {$idPath_class}" {$idPath_style}>
-		{$idPath_value}
-	</td>
-{END idPath_fieldcolumn}
-
-	{BEGIN strFilename_fieldcolumn}
-	<td class="runner-cc  {$strFilename_class}" {$strFilename_style}>
-		{$strFilename_value}
-	</td>
-{END strFilename_fieldcolumn}
-
-	{BEGIN strTag_fieldcolumn}
-	<td class="runner-cc  {$strTag_class}" {$strTag_style}>
-		{$strTag_value}
-	</td>
-{END strTag_fieldcolumn}
-
-	{BEGIN idMovie_fieldcolumn}
+										{BEGIN idMovie_fieldcolumn}
 	<td class="runner-cc  {$idMovie_class}" {$idMovie_style}>
 		{$idMovie_value}
 	</td>
@@ -1072,37 +942,7 @@
 									{END checkbox_column}
 
 
-									{BEGIN idTag_fieldheadercolumn}
-<td class="runner-cc "></td>
-{END idTag_fieldheadercolumn}
-{BEGIN idSet1_fieldheadercolumn}
-<td class="runner-cc "></td>
-{END idSet1_fieldheadercolumn}
-{BEGIN strSet_fieldheadercolumn}
-<td class="runner-cc "></td>
-{END strSet_fieldheadercolumn}
-{BEGIN idGenre_fieldheadercolumn}
-<td class="runner-cc "></td>
-{END idGenre_fieldheadercolumn}
-{BEGIN strGenre_fieldheadercolumn}
-<td class="runner-cc "></td>
-{END strGenre_fieldheadercolumn}
-{BEGIN strPath_fieldheadercolumn}
-<td class="runner-cc "></td>
-{END strPath_fieldheadercolumn}
-{BEGIN dateAdded_fieldheadercolumn}
-<td class="runner-cc "></td>
-{END dateAdded_fieldheadercolumn}
-{BEGIN idPath_fieldheadercolumn}
-<td class="runner-cc "></td>
-{END idPath_fieldheadercolumn}
-{BEGIN strFilename_fieldheadercolumn}
-<td class="runner-cc "></td>
-{END strFilename_fieldheadercolumn}
-{BEGIN strTag_fieldheadercolumn}
-<td class="runner-cc "></td>
-{END strTag_fieldheadercolumn}
-{BEGIN idMovie_fieldheadercolumn}
+									{BEGIN idMovie_fieldheadercolumn}
 <td class="runner-cc "></td>
 {END idMovie_fieldheadercolumn}
 {BEGIN idFile_fieldheadercolumn}

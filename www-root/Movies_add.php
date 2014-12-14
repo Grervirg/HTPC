@@ -423,86 +423,6 @@ if(@$_POST["a"]=="added")
 		$control_idSet->readWebValue($avalues, $blobfields, "", false, $afilename_values);
 	}
 //	processing idSet - end
-//	processing strFilename - start
-	$inlineAddOption = true;
-	if($inlineAddOption)
-	{
-		$control_strFilename = $pageObject->getControl("strFilename", $id);
-		$control_strFilename->readWebValue($avalues, $blobfields, "", false, $afilename_values);
-	}
-//	processing strFilename - end
-//	processing idPath - start
-	$inlineAddOption = true;
-	if($inlineAddOption)
-	{
-		$control_idPath = $pageObject->getControl("idPath", $id);
-		$control_idPath->readWebValue($avalues, $blobfields, "", false, $afilename_values);
-	}
-//	processing idPath - end
-//	processing dateAdded - start
-	$inlineAddOption = true;
-	if($inlineAddOption)
-	{
-		$control_dateAdded = $pageObject->getControl("dateAdded", $id);
-		$control_dateAdded->readWebValue($avalues, $blobfields, "", false, $afilename_values);
-	}
-//	processing dateAdded - end
-//	processing strPath - start
-	$inlineAddOption = true;
-	if($inlineAddOption)
-	{
-		$control_strPath = $pageObject->getControl("strPath", $id);
-		$control_strPath->readWebValue($avalues, $blobfields, "", false, $afilename_values);
-	}
-//	processing strPath - end
-//	processing strGenre - start
-	$inlineAddOption = true;
-	if($inlineAddOption)
-	{
-		$control_strGenre = $pageObject->getControl("strGenre", $id);
-		$control_strGenre->readWebValue($avalues, $blobfields, "", false, $afilename_values);
-	}
-//	processing strGenre - end
-//	processing idGenre - start
-	$inlineAddOption = true;
-	if($inlineAddOption)
-	{
-		$control_idGenre = $pageObject->getControl("idGenre", $id);
-		$control_idGenre->readWebValue($avalues, $blobfields, "", false, $afilename_values);
-	}
-//	processing idGenre - end
-//	processing strSet - start
-	$inlineAddOption = true;
-	if($inlineAddOption)
-	{
-		$control_strSet = $pageObject->getControl("strSet", $id);
-		$control_strSet->readWebValue($avalues, $blobfields, "", false, $afilename_values);
-	}
-//	processing strSet - end
-//	processing idSet1 - start
-	$inlineAddOption = true;
-	if($inlineAddOption)
-	{
-		$control_idSet1 = $pageObject->getControl("idSet1", $id);
-		$control_idSet1->readWebValue($avalues, $blobfields, "", false, $afilename_values);
-	}
-//	processing idSet1 - end
-//	processing strTag - start
-	$inlineAddOption = true;
-	if($inlineAddOption)
-	{
-		$control_strTag = $pageObject->getControl("strTag", $id);
-		$control_strTag->readWebValue($avalues, $blobfields, "", false, $afilename_values);
-	}
-//	processing strTag - end
-//	processing idTag - start
-	$inlineAddOption = true;
-	if($inlineAddOption)
-	{
-		$control_idTag = $pageObject->getControl("idTag", $id);
-		$control_idTag->readWebValue($avalues, $blobfields, "", false, $afilename_values);
-	}
-//	processing idTag - end
 
 
 
@@ -718,76 +638,6 @@ if(@$_POST["a"]=="added")
 				$control_idSet->afterSuccessfulSave();
 			}
 //	processing idSet - end
-//	processing strFilename - start
-			$inlineAddOption = true;
-			if($inlineAddOption)
-			{
-				$control_strFilename->afterSuccessfulSave();
-			}
-//	processing strFilename - end
-//	processing idPath - start
-			$inlineAddOption = true;
-			if($inlineAddOption)
-			{
-				$control_idPath->afterSuccessfulSave();
-			}
-//	processing idPath - end
-//	processing dateAdded - start
-			$inlineAddOption = true;
-			if($inlineAddOption)
-			{
-				$control_dateAdded->afterSuccessfulSave();
-			}
-//	processing dateAdded - end
-//	processing strPath - start
-			$inlineAddOption = true;
-			if($inlineAddOption)
-			{
-				$control_strPath->afterSuccessfulSave();
-			}
-//	processing strPath - end
-//	processing strGenre - start
-			$inlineAddOption = true;
-			if($inlineAddOption)
-			{
-				$control_strGenre->afterSuccessfulSave();
-			}
-//	processing strGenre - end
-//	processing idGenre - start
-			$inlineAddOption = true;
-			if($inlineAddOption)
-			{
-				$control_idGenre->afterSuccessfulSave();
-			}
-//	processing idGenre - end
-//	processing strSet - start
-			$inlineAddOption = true;
-			if($inlineAddOption)
-			{
-				$control_strSet->afterSuccessfulSave();
-			}
-//	processing strSet - end
-//	processing idSet1 - start
-			$inlineAddOption = true;
-			if($inlineAddOption)
-			{
-				$control_idSet1->afterSuccessfulSave();
-			}
-//	processing idSet1 - end
-//	processing strTag - start
-			$inlineAddOption = true;
-			if($inlineAddOption)
-			{
-				$control_strTag->afterSuccessfulSave();
-			}
-//	processing strTag - end
-//	processing idTag - start
-			$inlineAddOption = true;
-			if($inlineAddOption)
-			{
-				$control_idTag->afterSuccessfulSave();
-			}
-//	processing idTag - end
 
 			$afterAdd_id = '';	
 			if($eventObj->exists("AfterAdd") && $inlineadd!=ADD_MASTER){
@@ -925,16 +775,6 @@ if($readavalues)
 	$defvalues["c22"]=@$avalues["c22"];
 	$defvalues["c23"]=@$avalues["c23"];
 	$defvalues["idSet"]=@$avalues["idSet"];
-	$defvalues["strFilename"]=@$avalues["strFilename"];
-	$defvalues["idPath"]=@$avalues["idPath"];
-	$defvalues["dateAdded"]=@$avalues["dateAdded"];
-	$defvalues["strPath"]=@$avalues["strPath"];
-	$defvalues["strGenre"]=@$avalues["strGenre"];
-	$defvalues["idGenre"]=@$avalues["idGenre"];
-	$defvalues["strSet"]=@$avalues["strSet"];
-	$defvalues["idSet1"]=@$avalues["idSet1"];
-	$defvalues["strTag"]=@$avalues["strTag"];
-	$defvalues["idTag"]=@$avalues["idTag"];
 }
 
 if($eventObj->exists("ProcessValuesAdd"))
@@ -1161,86 +1001,6 @@ if($inlineadd!=ADD_INLINE)
 	$xt->assign("idSet_label",true);
 	if(isEnableSection508())
 		$xt->assign_section("idSet_label","<label for=\"".GetInputElementId("idSet", $id, PAGE_ADD)."\">","</label>");
-	
-	if(!$pageObject->isAppearOnTabs("strFilename"))
-		$xt->assign("strFilename_fieldblock",true);
-	else
-		$xt->assign("strFilename_tabfieldblock",true);
-	$xt->assign("strFilename_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("strFilename_label","<label for=\"".GetInputElementId("strFilename", $id, PAGE_ADD)."\">","</label>");
-	
-	if(!$pageObject->isAppearOnTabs("idPath"))
-		$xt->assign("idPath_fieldblock",true);
-	else
-		$xt->assign("idPath_tabfieldblock",true);
-	$xt->assign("idPath_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("idPath_label","<label for=\"".GetInputElementId("idPath", $id, PAGE_ADD)."\">","</label>");
-	
-	if(!$pageObject->isAppearOnTabs("dateAdded"))
-		$xt->assign("dateAdded_fieldblock",true);
-	else
-		$xt->assign("dateAdded_tabfieldblock",true);
-	$xt->assign("dateAdded_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("dateAdded_label","<label for=\"".GetInputElementId("dateAdded", $id, PAGE_ADD)."\">","</label>");
-	
-	if(!$pageObject->isAppearOnTabs("strPath"))
-		$xt->assign("strPath_fieldblock",true);
-	else
-		$xt->assign("strPath_tabfieldblock",true);
-	$xt->assign("strPath_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("strPath_label","<label for=\"".GetInputElementId("strPath", $id, PAGE_ADD)."\">","</label>");
-	
-	if(!$pageObject->isAppearOnTabs("strGenre"))
-		$xt->assign("strGenre_fieldblock",true);
-	else
-		$xt->assign("strGenre_tabfieldblock",true);
-	$xt->assign("strGenre_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("strGenre_label","<label for=\"".GetInputElementId("strGenre", $id, PAGE_ADD)."\">","</label>");
-	
-	if(!$pageObject->isAppearOnTabs("idGenre"))
-		$xt->assign("idGenre_fieldblock",true);
-	else
-		$xt->assign("idGenre_tabfieldblock",true);
-	$xt->assign("idGenre_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("idGenre_label","<label for=\"".GetInputElementId("idGenre", $id, PAGE_ADD)."\">","</label>");
-	
-	if(!$pageObject->isAppearOnTabs("strSet"))
-		$xt->assign("strSet_fieldblock",true);
-	else
-		$xt->assign("strSet_tabfieldblock",true);
-	$xt->assign("strSet_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("strSet_label","<label for=\"".GetInputElementId("strSet", $id, PAGE_ADD)."\">","</label>");
-	
-	if(!$pageObject->isAppearOnTabs("idSet1"))
-		$xt->assign("idSet1_fieldblock",true);
-	else
-		$xt->assign("idSet1_tabfieldblock",true);
-	$xt->assign("idSet1_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("idSet1_label","<label for=\"".GetInputElementId("idSet1", $id, PAGE_ADD)."\">","</label>");
-	
-	if(!$pageObject->isAppearOnTabs("strTag"))
-		$xt->assign("strTag_fieldblock",true);
-	else
-		$xt->assign("strTag_tabfieldblock",true);
-	$xt->assign("strTag_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("strTag_label","<label for=\"".GetInputElementId("strTag", $id, PAGE_ADD)."\">","</label>");
-	
-	if(!$pageObject->isAppearOnTabs("idTag"))
-		$xt->assign("idTag_fieldblock",true);
-	else
-		$xt->assign("idTag_tabfieldblock",true);
-	$xt->assign("idTag_label",true);
-	if(isEnableSection508())
-		$xt->assign_section("idTag_label","<label for=\"".GetInputElementId("idTag", $id, PAGE_ADD)."\">","</label>");
 	
 	
 	
@@ -1658,126 +1418,6 @@ if(@$_POST["a"]=="added" && ($inlineadd == ADD_INLINE || $inlineadd == ADD_MASTE
 		$showValues["idSet"] = $value;
 		$showFields[] = "idSet";
 	}	
-//	strFilename
-	$display = false;
-	if($inlineadd==ADD_MASTER)
-		$display = true;
-	if($inlineadd==ADD_INLINE || $inlineadd==ADD_ONTHEFLY || $inlineadd==ADD_POPUP)
-		$display = true;
-	if($display)
-	{	
-		$value = $pageObject->showDBValue("strFilename", $data, $keylink);
-		$showValues["strFilename"] = $value;
-		$showFields[] = "strFilename";
-	}	
-//	idPath
-	$display = false;
-	if($inlineadd==ADD_MASTER)
-		$display = true;
-	if($inlineadd==ADD_INLINE || $inlineadd==ADD_ONTHEFLY || $inlineadd==ADD_POPUP)
-		$display = true;
-	if($display)
-	{	
-		$value = $pageObject->showDBValue("idPath", $data, $keylink);
-		$showValues["idPath"] = $value;
-		$showFields[] = "idPath";
-	}	
-//	dateAdded
-	$display = false;
-	if($inlineadd==ADD_MASTER)
-		$display = true;
-	if($inlineadd==ADD_INLINE || $inlineadd==ADD_ONTHEFLY || $inlineadd==ADD_POPUP)
-		$display = true;
-	if($display)
-	{	
-		$value = $pageObject->showDBValue("dateAdded", $data, $keylink);
-		$showValues["dateAdded"] = $value;
-		$showFields[] = "dateAdded";
-	}	
-//	strPath
-	$display = false;
-	if($inlineadd==ADD_MASTER)
-		$display = true;
-	if($inlineadd==ADD_INLINE || $inlineadd==ADD_ONTHEFLY || $inlineadd==ADD_POPUP)
-		$display = true;
-	if($display)
-	{	
-		$value = $pageObject->showDBValue("strPath", $data, $keylink);
-		$showValues["strPath"] = $value;
-		$showFields[] = "strPath";
-	}	
-//	strGenre
-	$display = false;
-	if($inlineadd==ADD_MASTER)
-		$display = true;
-	if($inlineadd==ADD_INLINE || $inlineadd==ADD_ONTHEFLY || $inlineadd==ADD_POPUP)
-		$display = true;
-	if($display)
-	{	
-		$value = $pageObject->showDBValue("strGenre", $data, $keylink);
-		$showValues["strGenre"] = $value;
-		$showFields[] = "strGenre";
-	}	
-//	idGenre
-	$display = false;
-	if($inlineadd==ADD_MASTER)
-		$display = true;
-	if($inlineadd==ADD_INLINE || $inlineadd==ADD_ONTHEFLY || $inlineadd==ADD_POPUP)
-		$display = true;
-	if($display)
-	{	
-		$value = $pageObject->showDBValue("idGenre", $data, $keylink);
-		$showValues["idGenre"] = $value;
-		$showFields[] = "idGenre";
-	}	
-//	strSet
-	$display = false;
-	if($inlineadd==ADD_MASTER)
-		$display = true;
-	if($inlineadd==ADD_INLINE || $inlineadd==ADD_ONTHEFLY || $inlineadd==ADD_POPUP)
-		$display = true;
-	if($display)
-	{	
-		$value = $pageObject->showDBValue("strSet", $data, $keylink);
-		$showValues["strSet"] = $value;
-		$showFields[] = "strSet";
-	}	
-//	idSet1
-	$display = false;
-	if($inlineadd==ADD_MASTER)
-		$display = true;
-	if($inlineadd==ADD_INLINE || $inlineadd==ADD_ONTHEFLY || $inlineadd==ADD_POPUP)
-		$display = true;
-	if($display)
-	{	
-		$value = $pageObject->showDBValue("idSet1", $data, $keylink);
-		$showValues["idSet1"] = $value;
-		$showFields[] = "idSet1";
-	}	
-//	strTag
-	$display = false;
-	if($inlineadd==ADD_MASTER)
-		$display = true;
-	if($inlineadd==ADD_INLINE || $inlineadd==ADD_ONTHEFLY || $inlineadd==ADD_POPUP)
-		$display = true;
-	if($display)
-	{	
-		$value = $pageObject->showDBValue("strTag", $data, $keylink);
-		$showValues["strTag"] = $value;
-		$showFields[] = "strTag";
-	}	
-//	idTag
-	$display = false;
-	if($inlineadd==ADD_MASTER)
-		$display = true;
-	if($inlineadd==ADD_INLINE || $inlineadd==ADD_ONTHEFLY || $inlineadd==ADD_POPUP)
-		$display = true;
-	if($display)
-	{	
-		$value = $pageObject->showDBValue("idTag", $data, $keylink);
-		$showValues["idTag"] = $value;
-		$showFields[] = "idTag";
-	}	
 		$showRawValues["idMovie"] = substr($data["idMovie"],0,100);
 		$showRawValues["idFile"] = substr($data["idFile"],0,100);
 		$showRawValues["c00"] = substr($data["c00"],0,100);
@@ -1805,18 +1445,6 @@ if(@$_POST["a"]=="added" && ($inlineadd == ADD_INLINE || $inlineadd == ADD_MASTE
 		$showRawValues["c22"] = substr($data["c22"],0,100);
 		$showRawValues["c23"] = substr($data["c23"],0,100);
 		$showRawValues["idSet"] = substr($data["idSet"],0,100);
-		$showRawValues["strFilename"] = substr($data["strFilename"],0,100);
-		$showRawValues["idPath"] = substr($data["idPath"],0,100);
-		$showRawValues["dateAdded"] = substr($data["dateAdded"],0,100);
-		$showRawValues["strPath"] = substr($data["strPath"],0,100);
-		$showRawValues["strGenre"] = substr($data["strGenre"],0,100);
-		$showRawValues["idGenre"] = substr($data["idGenre"],0,100);
-		$showRawValues["strSet"] = substr($data["strSet"],0,100);
-		$showRawValues["idSet1"] = substr($data["idSet1"],0,100);
-		$showRawValues["idMovie1"] = substr($data["idMovie1"],0,100);
-		$showRawValues["idGenre1"] = substr($data["idGenre1"],0,100);
-		$showRawValues["strTag"] = substr($data["strTag"],0,100);
-		$showRawValues["idTag"] = substr($data["idTag"],0,100);
 	
 	// for custom expression for display field
 	if ($dispFieldAlias)

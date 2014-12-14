@@ -529,8 +529,7 @@ class LookupField extends EditControl
 		if($this->lookupType == LT_QUERY)
 		{
 			$displayFieldType = $this->lookupPSet->getFieldType($this->field);
-						$this->btexttype = IsTextType($displayFieldType);
-		}	
+					}	
 			
 		if($this->multiselect)
 			$SearchFor = splitvalues($SearchFor);

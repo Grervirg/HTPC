@@ -33,12 +33,13 @@ function DBLookup($sql)
 class tDAL
 {
 	var $movie;
+	var $movieview;
+	var $episodeview;
+	var $musicvideoview;
+	var $seasonview;
+	var $tvshowview;
+	var $tvshowcounts;
 	var $files;
-	var $path;
-	var $genre;
-	var $sets;
-	var $genrelinkmovie;
-	var $tag;
 	var $lstTables;
 	var $Table=array();
 
@@ -47,12 +48,13 @@ class tDAL
 		if($this->lstTables)
 			return;
 	  $this->lstTables[]=array("name"=>"movie","varname"=>"movie");
+	  $this->lstTables[]=array("name"=>"movieview","varname"=>"movieview");
+	  $this->lstTables[]=array("name"=>"episodeview","varname"=>"episodeview");
+	  $this->lstTables[]=array("name"=>"musicvideoview","varname"=>"musicvideoview");
+	  $this->lstTables[]=array("name"=>"seasonview","varname"=>"seasonview");
+	  $this->lstTables[]=array("name"=>"tvshowview","varname"=>"tvshowview");
+	  $this->lstTables[]=array("name"=>"tvshowcounts","varname"=>"tvshowcounts");
 	  $this->lstTables[]=array("name"=>"files","varname"=>"files");
-	  $this->lstTables[]=array("name"=>"path","varname"=>"path");
-	  $this->lstTables[]=array("name"=>"genre","varname"=>"genre");
-	  $this->lstTables[]=array("name"=>"sets","varname"=>"sets");
-	  $this->lstTables[]=array("name"=>"genrelinkmovie","varname"=>"genrelinkmovie");
-	  $this->lstTables[]=array("name"=>"tag","varname"=>"tag");
 	}
 
 	/**

@@ -125,7 +125,7 @@ foreach ($fieldsArr as $f)
 				strlen($lookupOrderBy) ? ' ORDER BY '.$lookupOrderBy : null);
 		}else{
 			$LookupSQL = $LookupSQLTable." where ".$strLookupWhere;
-			if (!$gSettings->isLookupUnique($f) || nDATABASE_Access != 6)
+			if (!$gSettings->isLookupUnique($f) || nDATABASE_Access != 0)
 			{
 				if ($lookupOrderBy)
 				{

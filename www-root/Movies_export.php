@@ -201,7 +201,8 @@ if(@$_REQUEST["type"])
 			if(!$mypage)
 				$mypage = 1;
 			
-				}
+					$strSQL.=" limit ".(($mypage-1)*$nPageSize).",".$nPageSize;
+		}
 	}
 	$listarray = false;
 	if($eventObj->exists("ListQuery"))
@@ -223,7 +224,6 @@ if(@$_REQUEST["type"])
 	elseif($nPageSize>0)
 	{
 					$rs = db_query($strSQL,$conn);
-			db_pageseek($rs,$nPageSize,$mypage);
 	}
 	else
 		$rs = db_query($strSQL,$conn);
@@ -374,16 +374,6 @@ function ExportToXML($cipherer)
 			$values["c22"] = $pageObject->showDBValue("c22", $row);
 			$values["c23"] = $pageObject->showDBValue("c23", $row);
 			$values["idSet"] = $pageObject->showDBValue("idSet", $row);
-			$values["strFilename"] = $pageObject->showDBValue("strFilename", $row);
-			$values["idPath"] = $pageObject->showDBValue("idPath", $row);
-			$values["dateAdded"] = $pageObject->showDBValue("dateAdded", $row);
-			$values["strPath"] = $pageObject->showDBValue("strPath", $row);
-			$values["strGenre"] = $pageObject->showDBValue("strGenre", $row);
-			$values["idGenre"] = $pageObject->showDBValue("idGenre", $row);
-			$values["strSet"] = $pageObject->showDBValue("strSet", $row);
-			$values["idSet1"] = $pageObject->showDBValue("idSet1", $row);
-			$values["strTag"] = $pageObject->showDBValue("strTag", $row);
-			$values["idTag"] = $pageObject->showDBValue("idTag", $row);
 		
 		$eventRes = true;
 		if ($eventObj->exists('BeforeOut'))
@@ -503,36 +493,6 @@ function ExportToCSV($cipherer)
 	if($outstr!="")
 		$outstr.=",";
 	$outstr.= "\"idSet\"";
-	if($outstr!="")
-		$outstr.=",";
-	$outstr.= "\"strFilename\"";
-	if($outstr!="")
-		$outstr.=",";
-	$outstr.= "\"idPath\"";
-	if($outstr!="")
-		$outstr.=",";
-	$outstr.= "\"dateAdded\"";
-	if($outstr!="")
-		$outstr.=",";
-	$outstr.= "\"strPath\"";
-	if($outstr!="")
-		$outstr.=",";
-	$outstr.= "\"strGenre\"";
-	if($outstr!="")
-		$outstr.=",";
-	$outstr.= "\"idGenre\"";
-	if($outstr!="")
-		$outstr.=",";
-	$outstr.= "\"strSet\"";
-	if($outstr!="")
-		$outstr.=",";
-	$outstr.= "\"idSet1\"";
-	if($outstr!="")
-		$outstr.=",";
-	$outstr.= "\"strTag\"";
-	if($outstr!="")
-		$outstr.=",";
-	$outstr.= "\"idTag\"";
 	echo $outstr;
 	echo "\r\n";
 
@@ -568,16 +528,6 @@ function ExportToCSV($cipherer)
 			$values["c22"] = $pageObject->getViewControl("c22")->showDBValue($row, "");
 			$values["c23"] = $pageObject->getViewControl("c23")->showDBValue($row, "");
 			$values["idSet"] = $pageObject->getViewControl("idSet")->showDBValue($row, "");
-			$values["strFilename"] = $pageObject->getViewControl("strFilename")->showDBValue($row, "");
-			$values["idPath"] = $pageObject->getViewControl("idPath")->showDBValue($row, "");
-			$values["dateAdded"] = $pageObject->getViewControl("dateAdded")->showDBValue($row, "");
-			$values["strPath"] = $pageObject->getViewControl("strPath")->showDBValue($row, "");
-			$values["strGenre"] = $pageObject->getViewControl("strGenre")->showDBValue($row, "");
-			$values["idGenre"] = $pageObject->getViewControl("idGenre")->showDBValue($row, "");
-			$values["strSet"] = $pageObject->getViewControl("strSet")->showDBValue($row, "");
-			$values["idSet1"] = $pageObject->getViewControl("idSet1")->showDBValue($row, "");
-			$values["strTag"] = $pageObject->getViewControl("strTag")->showDBValue($row, "");
-			$values["idTag"] = $pageObject->getViewControl("idTag")->showDBValue($row, "");
 
 		$eventRes = true;
 		if ($eventObj->exists('BeforeOut'))
@@ -665,36 +615,6 @@ function ExportToCSV($cipherer)
 			if($outstr!="")
 				$outstr.=",";
 			$outstr.='"'.str_replace('"', '""', $values["idSet"]).'"';
-			if($outstr!="")
-				$outstr.=",";
-			$outstr.='"'.str_replace('"', '""', $values["strFilename"]).'"';
-			if($outstr!="")
-				$outstr.=",";
-			$outstr.='"'.str_replace('"', '""', $values["idPath"]).'"';
-			if($outstr!="")
-				$outstr.=",";
-			$outstr.='"'.str_replace('"', '""', $values["dateAdded"]).'"';
-			if($outstr!="")
-				$outstr.=",";
-			$outstr.='"'.str_replace('"', '""', $values["strPath"]).'"';
-			if($outstr!="")
-				$outstr.=",";
-			$outstr.='"'.str_replace('"', '""', $values["strGenre"]).'"';
-			if($outstr!="")
-				$outstr.=",";
-			$outstr.='"'.str_replace('"', '""', $values["idGenre"]).'"';
-			if($outstr!="")
-				$outstr.=",";
-			$outstr.='"'.str_replace('"', '""', $values["strSet"]).'"';
-			if($outstr!="")
-				$outstr.=",";
-			$outstr.='"'.str_replace('"', '""', $values["idSet1"]).'"';
-			if($outstr!="")
-				$outstr.=",";
-			$outstr.='"'.str_replace('"', '""', $values["strTag"]).'"';
-			if($outstr!="")
-				$outstr.=",";
-			$outstr.='"'.str_replace('"', '""', $values["idTag"]).'"';
 			echo $outstr;
 		}
 		
@@ -749,16 +669,6 @@ function WriteTableData($cipherer)
 		echo '<td style="width: 100" x:str>'.PrepareForExcel("Path").'</td>';	
 		echo '<td style="width: 100" x:str>'.PrepareForExcel("Pathid").'</td>';	
 		echo '<td style="width: 100" x:str>'.PrepareForExcel("Id Set").'</td>';	
-		echo '<td style="width: 100" x:str>'.PrepareForExcel("Str Filename").'</td>';	
-		echo '<td style="width: 100" x:str>'.PrepareForExcel("Id Path").'</td>';	
-		echo '<td style="width: 100" x:str>'.PrepareForExcel("Date Added").'</td>';	
-		echo '<td style="width: 100" x:str>'.PrepareForExcel("Str Path").'</td>';	
-		echo '<td style="width: 100" x:str>'.PrepareForExcel("Str Genre").'</td>';	
-		echo '<td style="width: 100" x:str>'.PrepareForExcel("Id Genre").'</td>';	
-		echo '<td style="width: 100" x:str>'.PrepareForExcel("Str Set").'</td>';	
-		echo '<td style="width: 100" x:str>'.PrepareForExcel("Id Set1").'</td>';	
-		echo '<td style="width: 100" x:str>'.PrepareForExcel("Str Tag").'</td>';	
-		echo '<td style="width: 100" x:str>'.PrepareForExcel("Id Tag").'</td>';	
 	}
 	else
 	{
@@ -788,16 +698,6 @@ function WriteTableData($cipherer)
 		echo "<td>"."Path"."</td>";
 		echo "<td>"."Pathid"."</td>";
 		echo "<td>"."Id Set"."</td>";
-		echo "<td>"."Str Filename"."</td>";
-		echo "<td>"."Id Path"."</td>";
-		echo "<td>"."Date Added"."</td>";
-		echo "<td>"."Str Path"."</td>";
-		echo "<td>"."Str Genre"."</td>";
-		echo "<td>"."Id Genre"."</td>";
-		echo "<td>"."Str Set"."</td>";
-		echo "<td>"."Id Set1"."</td>";
-		echo "<td>"."Str Tag"."</td>";
-		echo "<td>"."Id Tag"."</td>";
 	}
 	echo "</tr>";
 	
@@ -836,16 +736,6 @@ function WriteTableData($cipherer)
 					$values["c22"] = $pageObject->getViewControl("c22")->showDBValue($row, "");
 					$values["c23"] = $pageObject->getViewControl("c23")->showDBValue($row, "");
 					$values["idSet"] = $pageObject->getViewControl("idSet")->showDBValue($row, "");
-					$values["strFilename"] = $pageObject->getViewControl("strFilename")->showDBValue($row, "");
-					$values["idPath"] = $pageObject->getViewControl("idPath")->showDBValue($row, "");
-					$values["dateAdded"] = $pageObject->getViewControl("dateAdded")->showDBValue($row, "");
-					$values["strPath"] = $pageObject->getViewControl("strPath")->showDBValue($row, "");
-					$values["strGenre"] = $pageObject->getViewControl("strGenre")->showDBValue($row, "");
-					$values["idGenre"] = $pageObject->getViewControl("idGenre")->showDBValue($row, "");
-					$values["strSet"] = $pageObject->getViewControl("strSet")->showDBValue($row, "");
-					$values["idSet1"] = $pageObject->getViewControl("idSet1")->showDBValue($row, "");
-					$values["strTag"] = $pageObject->getViewControl("strTag")->showDBValue($row, "");
-					$values["idTag"] = $pageObject->getViewControl("idTag")->showDBValue($row, "");
 		
 		$eventRes = true;
 		if ($eventObj->exists('BeforeOut'))
@@ -1098,82 +988,6 @@ function WriteTableData($cipherer)
 							echo '<td>';
 			
 									echo $values["idSet"];
-			echo '</td>';
-							if($_REQUEST["type"]=="excel")
-					echo '<td x:str>';
-				else
-					echo '<td>';
-			
-									if($_REQUEST["type"]=="excel")
-						echo PrepareForExcel($values["strFilename"]);
-					else
-						echo $values["strFilename"];
-			echo '</td>';
-							echo '<td>';
-			
-									echo $values["idPath"];
-			echo '</td>';
-							if($_REQUEST["type"]=="excel")
-					echo '<td x:str>';
-				else
-					echo '<td>';
-			
-									if($_REQUEST["type"]=="excel")
-						echo PrepareForExcel($values["dateAdded"]);
-					else
-						echo $values["dateAdded"];
-			echo '</td>';
-							if($_REQUEST["type"]=="excel")
-					echo '<td x:str>';
-				else
-					echo '<td>';
-			
-									if($_REQUEST["type"]=="excel")
-						echo PrepareForExcel($values["strPath"]);
-					else
-						echo $values["strPath"];
-			echo '</td>';
-							if($_REQUEST["type"]=="excel")
-					echo '<td x:str>';
-				else
-					echo '<td>';
-			
-									if($_REQUEST["type"]=="excel")
-						echo PrepareForExcel($values["strGenre"]);
-					else
-						echo $values["strGenre"];
-			echo '</td>';
-							echo '<td>';
-			
-									echo $values["idGenre"];
-			echo '</td>';
-							if($_REQUEST["type"]=="excel")
-					echo '<td x:str>';
-				else
-					echo '<td>';
-			
-									if($_REQUEST["type"]=="excel")
-						echo PrepareForExcel($values["strSet"]);
-					else
-						echo $values["strSet"];
-			echo '</td>';
-							echo '<td>';
-			
-									echo $values["idSet1"];
-			echo '</td>';
-							if($_REQUEST["type"]=="excel")
-					echo '<td x:str>';
-				else
-					echo '<td>';
-			
-									if($_REQUEST["type"]=="excel")
-						echo PrepareForExcel($values["strTag"]);
-					else
-						echo $values["strTag"];
-			echo '</td>';
-							echo '<td>';
-			
-									echo $values["idTag"];
 			echo '</td>';
 			echo "</tr>";
 		}

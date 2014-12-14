@@ -6,13 +6,16 @@ function db_prepare_string($str)
 function db_addslashes($str)
 {
 	global $conn;
-	return $conn->escapeString($str);
+	if (UseNewMysqlLib())
+		return mysqli_real_escape_string($conn, $str);
+	else
+		return mysql_real_escape_string($str);
 }
+
 
 function db_addslashesbinary($str)
 {
-	global $conn;
-	return $conn->escapeString($str);
+	return add_mysql_binaryslashes($str);
 }
 
 function db_stripslashesbinary($str)
@@ -20,10 +23,11 @@ function db_stripslashesbinary($str)
 	return $str;
 }
 
+
 // adds wrappers to field name if required
 function AddFieldWrappers($strName)
 {
-	global $strLeftWrapper,$strRightWrapper;
+	global $strLeftWrapper, $strRightWrapper;
 	if(substr($strName,0,1)==$strLeftWrapper)
 		return $strName;
 	return $strLeftWrapper.$strName.$strRightWrapper;
@@ -67,7 +71,10 @@ function db_field2char($value,$type)
 function db_field2time($value,$type)
 {
 //	is called when searhing in View as:Time fields
+	if(IsDateFieldType($type))
+		return "time(".$value.")";
 	return $value;
 }
+
 
 ?>

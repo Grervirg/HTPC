@@ -11,7 +11,7 @@ set_time_limit(600);
 include("include/Movies_variables.php");
 include("include/import_functions.php");
 
-$strOriginalTableName="\"movie\"";
+$strOriginalTableName="`movie`";
 if(!isLogged())
 { 
 	$_SESSION["MyURL"]=$_SERVER["SCRIPT_NAME"]."?".$_SERVER["QUERY_STRING"];
@@ -182,7 +182,9 @@ function ImportFromExcel($uploadfile)
 		}
 	}
 
-																																									
+		if(in_array("idMovie",$fields))
+		$autoinc=true;
+																												
 	$ret=getImportExcelData($data,$fields);
 	
 		
@@ -222,7 +224,9 @@ function ImportFromCSV($uploadfile)
 		}
 	}
 	$autoinc = false;
-																																								
+		if(in_array("idMovie",$fields))
+		$autoinc=true;
+																											
 		
 	
 	

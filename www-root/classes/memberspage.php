@@ -143,7 +143,7 @@ class MembersPage extends ListPage_Simple
 			{
 				$useridx++;
 				//	delete records which are not needed
-				$sql="delete from \"ugmembers\" where UserName=".db_prepare_string($user);
+				$sql="delete from `ugmembers` where UserName=".db_prepare_string($user);
 				if($user==$_SESSION["UserID"])
 					$sql.=" and GroupID<>-1";
 				db_exec($sql,$this->conn);
@@ -156,7 +156,7 @@ class MembersPage extends ListPage_Simple
 						{
 							if($user==$_SESSION["UserID"] && $g==-1)
 								continue;
-							$sql="insert into \"ugmembers\" (UserName,GroupID) values (".db_prepare_string(htmlspecialchars($user)).",".$g.")";
+							$sql="insert into `ugmembers` (UserName,GroupID) values (".db_prepare_string(htmlspecialchars($user)).",".$g.")";
 							db_exec($sql,$this->conn);
 						}
 						else
@@ -168,7 +168,7 @@ class MembersPage extends ListPage_Simple
 					}
 					if($glist!="")
 					{
-						$sql="insert into \"ugmembers\" (UserName,GroupID) select ".db_prepare_string(htmlspecialchars($user)).",GroupID from \"uggroups\" where GroupID in (".$glist.")";
+						$sql="insert into `ugmembers` (UserName,GroupID) select ".db_prepare_string(htmlspecialchars($user)).",GroupID from `uggroups` where GroupID in (".$glist.")";
 						db_exec($sql,$this->conn);
 					}
 				}
@@ -339,7 +339,7 @@ class MembersPage extends ListPage_Simple
 	function fillMembers() 
 	{
 		//	select members list		
-		$trs = db_query("select , from \"ugmembers\" order by ,",$this->conn);
+		$trs = db_query("select , from `ugmembers` order by ,",$this->conn);
 		while($tdata = db_fetch_numarray($trs))
 		{
 			$this->members[] = array($tdata[1],$tdata[0]);
@@ -355,7 +355,7 @@ class MembersPage extends ListPage_Simple
 		$this->groups[] = array(-1,"<"."Admin".">");
 		$this->groupFullChecked[] = true;
 		
-		$trs = db_query("select , from \"uggroups\" order by ",$this->conn);
+		$trs = db_query("select , from `uggroups` order by ",$this->conn);
 		while($tdata = db_fetch_numarray($trs))
 		{
 			$this->groups[] = array($tdata[0],$tdata[1]);

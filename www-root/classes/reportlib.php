@@ -176,6 +176,7 @@ class ReportNumericField extends ReportField
 		$fname = $this->_oldAlgorithm ? GetFullFieldNameForInsert($this->pSet, $this->_name) : cached_ffn($this->_name, true);
 		if($this->_interval > 0)
 		{
+			return 'floor('.$fname.'/'.$this->_interval.')*'.$this->_interval;
 		}
 		else
 		{
@@ -243,6 +244,7 @@ class ReportCharField extends ReportField
 		$fname = $this->_oldAlgorithm && !$forGroupedField ? GetFullFieldNameForInsert($this->pSet, $this->_name) : cached_ffn($this->_name, $forGroupedField);
 		if($this->_interval > 0)
 		{
+            return 'substr('.$fname.', 1, '.$this->_interval.')';
 		}
 		else
 		{
@@ -345,6 +347,9 @@ class ReportDateField extends ReportField
 		{
 		// array = (year, quarter, month, week, day of week, full date, hour, minute)
 		// each element = array(sql begin, sql end, prev index)
+		$symbols = array(array('YEAR(', ')', -1), array('QUARTER(', ')', 0), array('MONTH(', ')', 0),
+						 array('WEEK(', ')', 0), array('DATE(', ')', -1),
+						 array('HOUR(', ')', 4), array('MINUTE(', ')', 5));
 
 			$idx = $this->_interval - 1;
 			do
@@ -976,7 +981,9 @@ class SQLStatement
 	{
 		if($from >= 0 && $this->_pagesize >= 0)
 		{
-						return $out;
+				        $out = $sql.' LIMIT '.intval($this->_pagesize).' OFFSET '.intval($from);
+			$this->_skipCount = 0;
+			return $out;
 		}
 		else
 		{
@@ -1938,8 +1945,7 @@ class ReportLogic extends Summarable
 		if(!$bSubqueriesSupported)
 			$this->_fullRequest = true;
 		
-			$this->_fullRequest = true;
-		
+			
 		// use non-optimized algorithm
 		$this->_recordBasedRequest = $this->_fullRequest; 
 		
