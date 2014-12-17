@@ -32,9 +32,20 @@
   <readbufferfactor>1.0</readbufferfactor> <!-- this factor determines the max readrate in terms of readbufferfactor * avg bitrate of a video file. 
 This can help on bad connections to keep the cache filled. It will also greatly speed up buffering. Default value 1.0. -->
 	 </network>
-
-	
-
+<pathsubstitution>
+	<substitute>
+    <from>special://profile/playlists/</from>
+    <to>nfs://var/kodishare/playlists/</to>
+  </substitute>
+    <substitute>
+    <from>special://profile/sources.xml</from>
+    <to>nfs://var/kodishare/sources.xml</to>
+  </substitute>
+  <substitute>
+    <from>special://profile/RssFeeds.xml</from>
+    <to>nfs://var/kodishare/RssFeeds.xml</to>
+  </substitute>
+</pathsubstitution> 
 	 
 	 
 </advancedsettings>

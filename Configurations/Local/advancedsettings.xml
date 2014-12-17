@@ -38,12 +38,16 @@ This can help on bad connections to keep the cache filled. It will also greatly 
 	 
 	<pathsubstitution>
   <substitute>
-    <from>nfs://media/MyMedia</from>
-    <to>/media/MyMedia</to>
+    <from>special://profile/playlists/</from>
+    <to>nfs://var/kodishare/playlists/</to>
   </substitute>
     <substitute>
-    <from>nfs://media/Tv</from>
-    <to>/media/Tv</to>
+    <from>special://profile/sources.xml</from>
+    <to>nfs://var/kodishare/sources.xml</to>
+  </substitute>
+  <substitute>
+    <from>special://profile/RssFeeds.xml</from>
+    <to>nfs://var/kodishare/RssFeeds.xml</to>
   </substitute>
  </pathsubstitution> 
 	 
