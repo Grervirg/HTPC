@@ -4,7 +4,7 @@
         <host>10.0.1.100</host>
         <port>3306</port>
         <user>xbmc</user>
-        <pass>xbmc</pass>
+        <pass>omawiq13</pass>
     </videodatabase> 
 
     <musicdatabase>
@@ -12,7 +12,7 @@
         <host>10.0.1.100</host>
         <port>3306</port>
         <user>xbmc</user>
-        <pass>xbmc</pass>
+        <pass>omawiq13</pass>
     </musicdatabase>
 
      <videolibrary>
@@ -36,7 +36,15 @@ This can help on bad connections to keep the cache filled. It will also greatly 
 
 	
 	 
-	<pathsubstitution>
+<pathsubstitution>
+  <substitute>
+    <from>nfs://media/MyMedia</from>
+    <to>/media/MyMedia</to>
+  </substitute>
+    <substitute>
+    <from>nfs://media/Tv</from>
+    <to>/media/Tv</to>
+  </substitute>
   <substitute>
     <from>special://profile/playlists/</from>
     <to>nfs://var/kodishare/playlists/</to>
