@@ -4,7 +4,7 @@
 #Vars
 #===========================================================
 #Path to Movie Directory
-mpath = /media/MyMedia
+mpath = /media/MyMedia/
 
 avilog = /media/MyMedia/Avilog.log
 mp4log = /media/MyMedia/Mp4log.log
