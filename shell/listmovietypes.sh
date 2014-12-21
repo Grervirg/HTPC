@@ -4,13 +4,17 @@
 #Vars
 #===========================================================
 #Path to Movie Directory
-mpath = '/media/MyMedia'
+mpath='/media/MyMedia'
 
-avilog = '/media/MyMedia/Avilog.log'
-mp4log = '/media/MyMedia/Mp4log.log'
-mkvlog = '/media/MyMedia/Mkvlog.log'
+avilog='/media/MyMedia/Avilog.log'
+mp4log='/media/MyMedia/Mp4log.log'
+mkvlog='/media/MyMedia/Mkvlog.log'
+wmvlog='/media/MyMedia/WmvLog.log'
+isolog='/media/MyMedia/isolog.log'
 
 
-find /media/MyMedia -type f -name "*.avi" > /media/MyMedia/Avilog.log
-find /media/MyMedia -type f -name "*.mp4" > /media/MyMedia/Mp4log.log
-find /media/MyMedia -type f -name "*.mkv" > /media/MyMedia/Mkvlog.log
+find $mpath -type f -name "*.avi" > $avilog
+find $mpath -type f -name "*.mp4" > $mp4log
+find $mpath -type f -name "*.mkv" > $mkvlog
+find $mpath -type f -name "*.wmv" > $wmvlog
+find $mpath -type f -name "*.iso" > $isolog

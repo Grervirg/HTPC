@@ -4,16 +4,16 @@
 #Vars
 #===========================================================
 #Path to Movie Directory
-mpath = /media/MyMedia
+mpath='/media/MyMedia'
 
 #Log file
-medialog = /var/logs/media.log
+medialog='/var/logs/media.log'
 
 #User:Group
-muser = grervirg:grervirg
+muser='grervirg:grervirg'
 
 #Permissions
-perms = 0777
+perms=0777
 
 #============================================================
 
