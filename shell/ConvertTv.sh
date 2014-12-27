@@ -1,3 +1,5 @@
 #!/bin/bash
 
-find /home/grervirg/Videos/Tv -iname \*.avi -exec HandBrakeCLI -i {} -o /home/grervirg/Videos/Complete/Tv/{}.mkv --preset=\"Kodi\"  _ {} \;
+find /home/grervirg/Videos/Tv -iname \*.avi -exec HandBrakeCLI -i {} -o {}.mkv --preset=\"Kodi\"  _ {} \;
+rename 's/\.avi.mkv$/\.mkv/' /home/grervirg/Videos/Tv/*.*
+mv /home/grervirg/Videos/Tv/*.mkv /home/grervirg/Complete/Tv/
