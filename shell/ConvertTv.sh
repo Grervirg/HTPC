@@ -1,5 +1,6 @@
 #!/bin/bash
+spath='/home/grervirg/Videos/Tv/'
+cpath='/home/grervirg/Videos/Complete/Tv/'
 
-find /home/grervirg/Videos/Tv -iname \*.avi -exec HandBrakeCLI -i {} -o {}.mkv --preset=\"Kodi\"  _ {} \;
-rename 's/\.avi.mkv$/\.mkv/' /home/grervirg/Videos/Tv/*.*
-mv /home/grervirg/Videos/Tv/*.mkv /home/grervirg/Complete/Tv/
+find $spath -iname \*.avi -exec HandBrakeCLI -i {} -o {}.mkv --preset=\"Kodi\"  _ {} \;
+mmv \*.avi.mkv $cpath#1.mkv
