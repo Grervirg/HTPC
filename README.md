@@ -1,6 +1,6 @@
 Kodi Htpc Automation Scripts
 =============================
-Version 0.0.0.7
+Version 0.0.0.
 
 
 
@@ -10,3 +10,5 @@ Extended Report scripts
 Automation of moving conversion files
 
 			
+12/27/14 : 
+Video Conversion Merge
