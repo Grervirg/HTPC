@@ -1,3 +1,3 @@
 #!/bin/bash
 
-find . -depth -iname “*.avi” -exec sh -c ‘HandBrakeCLI -i “$1?  -i “${1%.avi}.mkv? "--present=\"Kodi\" "‘ _ {} \;
+find .  -iname “*.avi” -exec sh -c ‘HandBrakeCLI -i {} -i {}.mkv? --present=\"Kodi\" ‘ _ {} \;
