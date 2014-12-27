@@ -8,7 +8,7 @@ dconpath='/mnt/downloads/'
 ppath='/home/grervirg/Videos/'
 
 mount -t cifs -o username=grervirg,password=omawiq13 //10.0.1.100/MediaProcess $sconpath
-mount -t cifs -o username=grervirg,password=omawiq13 $dpath $sconpath
+mount -t cifs -o username=grervirg,password=omawiq13 $dpath $dconpath
 mmv $compath/Tv/*.* $dconpath/Tv/
 
 mmv $compath/Movies/*.* $dconpath/Movies/
@@ -20,3 +20,4 @@ mmv $conpath/Android/*.* $sconpath/Android/
 
 
 umount $sconpath
+umount $dconpath
