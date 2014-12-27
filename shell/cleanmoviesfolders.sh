@@ -7,7 +7,7 @@
 mpath='/media/MyMedia'
 
 #Log file
-medialog='/var/logs/media.log'
+medialog='/var/medialogs/empty.log'
 
 #User:Group
 muser='grervirg:grervirg'

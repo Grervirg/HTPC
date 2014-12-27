@@ -6,7 +6,8 @@
 #Path to Movie Directory
 mpath='/media/MyMedia'
 
-avilog='/media/MyMedia/Avilog.log'
+logpath='/var/medialogs/'
+avilog={$logpath}'Avilog.log'
 mp4log='/media/MyMedia/Mp4log.log'
 mkvlog='/media/MyMedia/Mkvlog.log'
 wmvlog='/media/MyMedia/WmvLog.log'
