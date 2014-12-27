@@ -16,5 +16,5 @@ mmv $conpath/Movies/*.* $sconpath/Movies/
 mmv $conpath/Android/*.* $sconpath/Android/
 
 
-
+umount $sconpath
 ifconfig eth0 down
