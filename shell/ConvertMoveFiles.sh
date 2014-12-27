@@ -7,8 +7,8 @@ dpath='//10.0.1.100/Downloads/Complete/'
 dconpath='/mnt/downloads/'
 ppath='/home/grervirg/Videos'
 
-mount -t cifs -o username=grervirg,password=omawiq13,uid=1001,gid=1001 //10.0.1.100/MediaProcess $sconpath
-mount -t cifs -o username=grervirg,password=omawiq13,uid=1001,gid=1001 $dpath $dconpath
+mount -t cifs -o username=guest,rw,exec,auto //10.0.1.100/MediaProcess $sconpath
+mount -t cifs -o username=guest,rw,exec,auto $dpath $dconpath
 mmv $compath/Tv/*.* $dconpath/Tv/
 
 mmv $compath/Movies/*.* $dconpath/Movies/
