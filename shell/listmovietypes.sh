@@ -5,6 +5,7 @@
 #===========================================================
 #Path to Movie Directory
 mpath='/media/MyMedia'
+tpath='/media/Tv'
 
 logpath='/var/medialogs/'
 avilog={$logpath}'Avilog.log'

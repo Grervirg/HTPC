@@ -5,6 +5,7 @@
 #===========================================================
 #Path to Movie Directory
 mpath='/media/MyMedia'
+tpath='/media/Tv'
 
 #Log file
 medialog='/var/medialogs/empty.log'
