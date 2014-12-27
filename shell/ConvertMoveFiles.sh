@@ -1,8 +1,8 @@
 #!/bin/bash
 
-compath='smb://Converter/Videos/Complete'
+compath='/mnt/converter/Complete'
 conpath='/media/MediaProcess'
-sconpath='smb://Converter/Videos'
+sconpath='/mnt/converter'
 
 ifconfig eth0 up
 sleep 10
