@@ -6,6 +6,7 @@ find $spath -iname \*.mkv -exec HandBrakeCLI -i {} -o {}.mkv '--preset=\"Kodi An
 find $spath -iname \*.avi -exec HandBrakeCLI -i {} -o {}.mkv '--preset=\"Kodi Anim\"'  _ {} \;
 find $spath -iname \*.mp4 -exec HandBrakeCLI -i {} -o {}.mkv '--preset=\"Kodi Anim\"'  _ {} \;
 cd $spath
-rename \'s/\*.mkv.mkv\' *.mkv
-rename \'s/\*.avi.mkv\' *.mkv
-rename \'s/\*.mp4.mkv\' *.mkv
+rename -v 's/\.mkv.mkv$/\.mkv/' *.mkv
+rename -v 's/\.avi.mkv$/\.mkv/' *.mkv
+rename -v 's/\.mp4.mkv$/\.mkv/' *.mkv
+mv *.mkv $cpath
