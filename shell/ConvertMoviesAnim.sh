@@ -8,5 +8,5 @@ mmv 's/\*.mp4.mkv$/.mkv' $cpath\*.mkv
 find $spath -iname \*.avi -exec HandBrakeCLI -i {} -o {}.mkv '--preset=\"Kodi Anim\"'  _ {} \;
 mmv 's/\*.mp4.mkv$/.mkv' $cpath\*.mkv
 find $spath -iname \*.mp4 -exec HandBrakeCLI -i {} -o {}.mkv '--preset=\"Kodi Anim\"'  _ {} \;
-mmv 's/\*.mp4.mkv$/.mkv' $cpath\*.mkv
+mmv '*.mp4.mkv" $cpath\*.mkv
 
