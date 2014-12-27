@@ -1,20 +1,22 @@
 #!/bin/bash
 
-compath='/mnt/converter/Complete/'
+compath='/home/grervirg/Videos/Complete/'
 conpath='/media/MediaProcess'
-sconpath='/mnt/converter'
+sconpath='/mnt/mediacenter'
+dpath='//10.0.1.100/Downloads/Complete/'
+dconpath='/mnt/downloads/'
+ppath='/home/grervirg/Videos/'
 
-ifconfig eth0 up
-sleep 10
-mount -t cifs -o username=grervirg,password=omawiq13 10.0.1.230:/Videos $sconpath
-mmv $compath/Tv/*.* /media/Downloads/Complete/Tv/
-mmv $compath/Movies/*.* /media/Downloads/Complete/Movies/
+mount -t cifs -o username=grervirg,password=omawiq13 //10.0.1.100/MediaProcess $sconpath
+mount -t cifs -o username=grervirg,password=omawiq13 $dpath $sconpath
+mmv $compath/Tv/*.* $dconpath/Tv/
+
+mmv $compath/Movies/*.* $dconpath/Movies/
 rm $sconpath/Tv/*.*
 rm $sconpath/Movies/*.*
-mmv $conpath/Tv/*.* $sconpath/Tv/
+mmv $sconpath/Tv/*.* $sconpath/Tv/
 mmv $conpath/Movies/*.* $sconpath/Movies/
 mmv $conpath/Android/*.* $sconpath/Android/
 
 
 umount $sconpath
-ifconfig eth0 down
