@@ -25,6 +25,7 @@ case $arg in
 	echo "-4 = Movie Animation"
 	echo "-5 = Android"
 	echo "-6 = DVD Coming soon"
+	;;
 	1)
 		spath=$tpath
 		cpath=$tcompath
