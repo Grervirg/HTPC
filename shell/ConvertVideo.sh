@@ -15,23 +15,33 @@ androidpreset='--preset=\"Android\"'
 echo $1
 echo $2
 
-if ["$t" = "Movies"]; then
-spath=$mpath
-cpath=$mcompath;
-elif ["$t" = "Tv"]; then
-spath=$tpath
-cpath=$tcompath;
-elif ["$t" = "Android"]; then
-spath=$apath
-cpath=$acompath;
+if ["$t" = "Movies"] 
+then
+	spath=$mpath
+	cpath=$mcompath
+elif ["$t" = "Tv"] 
+then
+	spath=$tpath
+	cpath=$tcompath
+elif ["$t" = "Android"] 
+then
+	spath=$apath
+	cpath=$acompath
+else
+	echo "Missing Video Type"
 fi
 
-if ["$p" = "film"]; then
-preset=$filmpreset;
-elif ["$p" = "anim"]; then
-preset=$animpreset;
-elif ["$p" = "android"]; then
-preset=$androidpreset;
+if ["$p" = "film"]
+then
+	preset=$filmpreset
+elif ["$p" = "anim"]
+then
+	preset=$animpreset
+elif ["$p" = "android"]
+then
+	preset=$androidpreset
+else
+	echo "Missing Preset"
 fi
 
 find $spath -iname \*.mkv -exec HandBrakeCLI -i {} -o {}.mkv $preset  _ {} \;
