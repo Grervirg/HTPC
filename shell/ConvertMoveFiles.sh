@@ -13,9 +13,11 @@ mv $compath/Android/* $dconpath/android/
 rm $ppath/Tv/*
 rm $ppath/Movies/*
 rm $ppath/Android/*
-mv $conpath/Tv/* $ppath/Tv/
-mv $conpath/Movies/* $ppath/Movies/
-mv $conpath/Android/* $ppath/Android/
+cd $ppath/Tv
+wget $conpath/Tv/*
+#mv $conpath/Tv/* $ppath/Tv/
+#mv $conpath/Movies/* $ppath/Movies/
+#mv $conpath/Android/* $ppath/Android/
 
 
 
