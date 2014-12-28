@@ -13,9 +13,9 @@ animpreset='--preset=\"KodiAnim\"'
 androidpreset='--preset=\"Android\"'
 spath=''
 cpath=''
+preset=''
 
-echo $1
-echo $2
+
 
 while getopts "m:t:a:f:n" arg; do
 case $arg in
@@ -40,6 +40,10 @@ case $arg in
 		;;
 	esac
 done
+
+echo $spath
+echo $cpath
+echo $preset
 
 #if [$1 -eq "Movies"] 
 #then
