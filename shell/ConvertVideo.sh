@@ -15,22 +15,22 @@ androidpreset='--preset=\"Android\"'
 echo $1
 echo $2
 
-if ["$t" == "Movies"]; then
+if ["$t" = "Movies"]; then
 spath=$mpath
 cpath=$mcompath;
-elif ["$t" == "Tv"]; then
+elif ["$t" = "Tv"]; then
 spath=$tpath
 cpath=$tcompath;
-elif ["$t" == "Android"]; then
+elif ["$t" = "Android"]; then
 spath=$apath
 cpath=$acompath;
 fi
 
-if ["$p" == "film"]; then
+if ["$p" = "film"]; then
 preset=$filmpreset;
-elif ["$p" == "anim"]; then
+elif ["$p" = "anim"]; then
 preset=$animpreset;
-elif ["$p" == "android"]; then
+elif ["$p" = "android"]; then
 preset=$androidpreset;
 fi
 
