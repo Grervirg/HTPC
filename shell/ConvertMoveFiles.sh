@@ -12,9 +12,9 @@ mv $compath/Android/* $dconpath/android/
 rm $ppath/Tv/*
 rm $ppath/Movies/*
 rm $ppath/Android/*
-rsync -r -v $conpath/Tv/* $ppath/Tv/
-#mv $conpath/Movies/* $ppath/Movies/
-#mv $conpath/Android/* $ppath/Android/
+rsync -rvS $conpath/Tv/* $ppath/Tv/
+rsync -rvS $conpath/Movies/* $ppath/Movies/
+rsync -rvS $conpath/Android/* $ppath/Android/
 
 
 
