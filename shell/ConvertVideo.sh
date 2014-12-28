@@ -20,23 +20,23 @@ preset=''
 while getopts "m:t:a:f:n" arg; do
 case $arg in
 	m)
-		spath=$mpath
-		cpath=$mcompath
+		$spath=$mpath
+		$cpath=$mcompath
 		;;
 	t)
-		spath=$tpath
-		cpath=$tcompath
+		$spath=$tpath
+		$cpath=$tcompath
 		;;
 	a)
-		spath=$apath
-		cpath=$acompath
-		preset=$androidpreset
+		$spath=$apath
+		$cpath=$acompath
+		$preset=$androidpreset
 		;;
 	f)
-		preset=$filmpreset
+		$preset=$filmpreset
 		;;
 	n)
-		preset=$animpreset
+		$preset=$animpreset
 		;;
 	esac
 done
@@ -76,7 +76,7 @@ echo $preset
 
 find $spath -iname \*.mkv -exec HandBrakeCLI -i {} -o {}.mkv $preset  _ {} \;
 find $spath -iname \*.avi -exec HandBrakeCLI -i {} -o {}.mkv $preset  _ {} \;
-find $spath -iname \*.mp4 -exec HandBrakeCLI -i {} -o {}.mkv %preset  _ {} \;
+find $spath -iname \*.mp4 -exec HandBrakeCLI -i {} -o {}.mkv $preset  _ {} \;
 cd $spath
 mv *.mkv.mkv $cpath
 mv *.avi.mkv $cpath
