@@ -7,15 +7,15 @@ dconpath='/media/downloads/Complete'
 ppath='/home/grervirg/Videos'
 
 
-mv $compath/Tv/*.* $dconpath/tv/
-mv $compath/Movies/*.* $dconpath/movies/
-mv $compath/Android/*.* $dconpath/android/
-rm $ppath/Tv/*.*
-rm $ppath/Movies/*.*
-rm $ppath/Android/*.*
-mv $conpath/Tv/*.* $ppath/Tv/
-mv $conpath/Movies/*.* $ppath/Movies/
-mv $conpath/Android/*.* $ppath/Android/
+mv $compath/Tv/* $dconpath/tv/
+mv $compath/Movies/* $dconpath/movies/
+mv $compath/Android/* $dconpath/android/
+rm $ppath/Tv/*
+rm $ppath/Movies/*
+rm $ppath/Android/*
+mv $conpath/Tv/* $ppath/Tv/
+mv $conpath/Movies/* $ppath/Movies/
+mv $conpath/Android/* $ppath/Android/
 
 
 
