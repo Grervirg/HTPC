@@ -11,32 +11,30 @@ apath='/home/grervirg/Videos/Android/'
 filmpreset='--preset=\"Kodi\"'
 animpreset='--preset=\"KodiAnim\"'
 androidpreset='--preset=\"Android\"'
-spath=''
-cpath=''
-preset=''
+
 
 
 
 while getopts "m:t:a:f:n" arg; do
 case $arg in
 	m)
-		$spath=$mpath
-		$cpath=$mcompath
+		spath=$mpath
+		cpath=$mcompath
 		;;
 	t)
-		$spath=$tpath
-		$cpath=$tcompath
+		spath=$tpath
+		cpath=$tcompath
 		;;
 	a)
-		$spath=$apath
-		$cpath=$acompath
-		$preset=$androidpreset
+		spath=$apath
+		cpath=$acompath
+		preset=$androidpreset
 		;;
 	f)
-		$preset=$filmpreset
+		preset=$filmpreset
 		;;
 	n)
-		$preset=$animpreset
+		preset=$animpreset
 		;;
 	esac
 done
