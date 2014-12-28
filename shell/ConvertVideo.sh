@@ -1,5 +1,6 @@
 #!/bin/bash
-
+t=$1
+p=$2
 mcomppath='/home/grervirg/Videos/Complete/Movies/'
 tcompath='/home/grervirg/Videos/Complete/Tv/'
 acompath='/home/grervirg/Videos/Complete/Android/'
@@ -12,22 +13,22 @@ animpreset='--preset=\"KodiAnim\"'
 androidpreset='--preset=\"Android\"'
 
 
-if [$1 == "Movies"]; then
+if [$t == "Movies"]; then
 spath=$mpath
 cpath=$mcompath
-elif [$1 == "Tv"]; then
+elif [$t == "Tv"]; then
 spath=$tpath
 cpath=$tcompath
-elif [$1 == "Android"]; then
+elif [$t == "Android"]; then
 spath=$apath
 cpath=$acompath
 fi
 
-if [$2 == "film"]; then
+if [$p == "film"]; then
 preset=$filmpreset
-elif [$2 == "anim"]; then
+elif [$p == "anim"]; then
 preset=$animpreset
-elif [$2 == "android"]; then
+elif [$p == "android"]; then
 preset=$androidpreset
 fi
 
