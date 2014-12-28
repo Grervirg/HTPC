@@ -83,6 +83,6 @@ case $arg in
 done
 
 
-
+echo $args
 
 
