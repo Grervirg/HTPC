@@ -12,6 +12,8 @@ filmpreset='--preset=\"Kodi\"'
 animpreset='--preset=\"KodiAnim\"'
 androidpreset='--preset=\"Android\"'
 
+echo $1
+echo $2
 
 if ["$t" == "Movies"]; then
 spath=$mpath
