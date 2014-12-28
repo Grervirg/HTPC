@@ -17,21 +17,21 @@ echo $2
 
 if ["$t" == "Movies"]; then
 spath=$mpath
-cpath=$mcompath
+cpath=$mcompath;
 elif ["$t" == "Tv"]; then
 spath=$tpath
-cpath=$tcompath
+cpath=$tcompath;
 elif ["$t" == "Android"]; then
 spath=$apath
-cpath=$acompath
+cpath=$acompath;
 fi
 
 if ["$p" == "film"]; then
-preset=$filmpreset
+preset=$filmpreset;
 elif ["$p" == "anim"]; then
-preset=$animpreset
+preset=$animpreset;
 elif ["$p" == "android"]; then
-preset=$androidpreset
+preset=$androidpreset;
 fi
 
 find $spath -iname \*.mkv -exec HandBrakeCLI -i {} -o {}.mkv $preset  _ {} \;
