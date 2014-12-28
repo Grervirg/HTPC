@@ -15,32 +15,40 @@ androidpreset='--preset=\"Android\"'
 
 
 
-while getopts "movie:tv:android:tv-anim:movie-anim" arg; do
+while getopts "h:1:2:3:4:5:6" arg; do
 case $arg in
-	movie)
-		spath=$mpath
-		cpath=$mcompath
-		preset=$filmpreset
-		;;
-	tv)
+	h)
+	echo "Usage: $0 [option]"
+	echo "-1 = Tv Film"
+	echo "-2 = Tv Animation"
+	echo "-3 = Movie Film"
+	echo "-4 = Movie Animation"
+	echo "-5 = Android"
+	echo "-6 = DVD Coming soon"
+	1)
 		spath=$tpath
 		cpath=$tcompath
 		preset=$filmpreset
 		;;
-	android)
+	2)
+		spath=$tpath
+		cpath=$tcompath
+		preset=$animpreset
+		;;
+	3)
+		spath=$mpath
+		cpath=$mcompath
+		preset=$filmpreset
+		;;
+	4)
+		spath=$mpath
+		cpath=$mcompath
+		preset=$animpreset
+		;;
+	5)
 		spath=$apath
 		cpath=$acompath
 		preset=$androidpreset
-		;;
-	tv-anim)
-		spath=$tpath
-		cpath=$tcompath
-		preset=$animpreset
-		;;
-	movie-anim)
-		spath=$mpath
-		cpath=$mcompath
-		preset=$animpreset
 		;;
 	esac
 done
