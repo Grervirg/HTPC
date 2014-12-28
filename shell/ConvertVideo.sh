@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 t=$1
 p=$2
 mcomppath='/home/grervirg/Videos/Complete/Movies/'
@@ -41,7 +41,7 @@ convert() {
 }
 
 
-while getopts ":h:a:b:c:d:e:f:" arg; do
+while getopts ":habcdef:" arg; do
 case $arg in
 	h)
 		usage
