@@ -15,7 +15,7 @@ androidpreset='--preset=\"Android\"'
 
 
 
-while getopts "h:1:2:3:4:5:6" arg; do
+while getopts ":h:1:2:3:4:5:6:" arg; do
 case $arg in
 	h)
 		echo "Usage: $0 [option]"
