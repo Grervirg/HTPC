@@ -18,14 +18,14 @@ androidpreset='--preset=\"Android\"'
 while getopts "h:1:2:3:4:5:6" arg; do
 case $arg in
 	h)
-	echo "Usage: $0 [option]"
-	echo "-1 = Tv Film"
-	echo "-2 = Tv Animation"
-	echo "-3 = Movie Film"
-	echo "-4 = Movie Animation"
-	echo "-5 = Android"
-	echo "-6 = DVD Coming soon"
-	;;
+		echo "Usage: $0 [option]"
+		echo "-1 = Tv Film"
+		echo "-2 = Tv Animation"
+		echo "-3 = Movie Film"
+		echo "-4 = Movie Animation"
+		echo "-5 = Android"
+		echo "-6 = DVD Coming soon"
+		;;
 	1)
 		spath=$tpath
 		cpath=$tcompath
