@@ -3,21 +3,19 @@
 compath='/home/grervirg/Videos/Complete'
 conpath='/media/MediaProcess'
 sconpath='/mnt/mediacenter'
-dpath='//10.0.1.100/Downloads/Complete'
-dconpath='/mnt/downloads/'
+dconpath='/media/downloads/Complete'
 ppath='/home/grervirg/Videos'
 
-mount -t cifs -o username=guest,rw,exec,auto //10.0.1.100/MediaProcess $sconpath
-mount -t cifs -o username=guest,rw,exec,auto $dpath $dconpath
-mv $compath/Tv/*.* $dconpath/Tv/
 
-mv $compath/Movies/*.* $dconpath/Movies/
+mv $compath/Tv/*.* $dconpath/tv/
+mv $compath/Movies/*.* $dconpath/movies/
+mv $compath/Android/*.* $dconpath/android/
 rm $ppath/Tv/*.*
 rm $ppath/Movies/*.*
-mv $sconpath/Tv/*.* $ppath/Tv/
-mv $sconpath/Movies/*.* $ppath/Movies/
-mv $sconpath/Android/*.* $ppath/Android/
+rm $ppath/Android/*.*
+mv $conpath/Tv/*.* $ppath/Tv/
+mv $conpath/Movies/*.* $ppath/Movies/
+mv $conpath/Android/*.* $ppath/Android/
 
 
-umount $sconpath
-umount $dconpath
+
