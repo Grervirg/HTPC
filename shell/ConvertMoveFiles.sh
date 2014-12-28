@@ -9,12 +9,12 @@ ppath='/home/grervirg/Videos'
 mv $compath/Tv/* $dconpath/tv/
 mv $compath/Movies/* $dconpath/movies/
 mv $compath/Android/* $dconpath/android/
-rm $ppath/Tv/*
-rm $ppath/Movies/*
-rm $ppath/Android/*
-rsync -rvS $conpath/Tv/* $ppath/Tv/
-rsync -rvS $conpath/Movies/* $ppath/Movies/
-rsync -rvS $conpath/Android/* $ppath/Android/
+rm -rf $ppath/Tv/*
+rm -rf $ppath/Movies/*
+rm -rf $ppath/Android/*
+rsync -rvS --progress $conpath/Tv/* $ppath/Tv/
+rsync -rvS --progress $conpath/Movies/* $ppath/Movies/
+rsync -rvS --progress $conpath/Android/* $ppath/Android/
 
 
 
