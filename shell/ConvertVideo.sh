@@ -1,7 +1,7 @@
 #!/bin/sh
 t=$1
 p=$2
-mcomppath='/home/grervirg/Videos/Complete/Movies/'
+mcompath='/home/grervirg/Videos/Complete/Movies/'
 tcompath='/home/grervirg/Videos/Complete/Tv/'
 acompath='/home/grervirg/Videos/Complete/Android/'
 mpath='/home/grervirg/Videos/Movies/'
