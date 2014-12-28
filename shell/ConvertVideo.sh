@@ -15,15 +15,15 @@ androidpreset='--preset=\"Android\"'
 echo $1
 echo $2
 
-if ["$t" = "Movies"] 
+if [$1 -eq "Movies"] 
 then
 	spath=$mpath
 	cpath=$mcompath
-elif ["$t" = "Tv"] 
+elif [$1 -eq "Tv"] 
 then
 	spath=$tpath
 	cpath=$tcompath
-elif ["$t" = "Android"] 
+elif [$1 -eq "Android"] 
 then
 	spath=$apath
 	cpath=$acompath
@@ -31,13 +31,13 @@ else
 	echo "Missing Video Type"
 fi
 
-if ["$p" = "film"]
+if [$2 = "film"]
 then
 	preset=$filmpreset
-elif ["$p" = "anim"]
+elif [$2 = "anim"]
 then
 	preset=$animpreset
-elif ["$p" = "android"]
+elif [$2 = "android"]
 then
 	preset=$androidpreset
 else
