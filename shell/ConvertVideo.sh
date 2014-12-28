@@ -14,12 +14,12 @@ androidpreset='--preset=\"Android\"'
 
 usage() {
 	echo "Usage: $0 [option]"
-	echo "-1 = Tv Film"
-	echo "-2 = Tv Animation"
-	echo "-3 = Movie Film"
-	echo "-4 = Movie Animation"
-	echo "-5 = Android"
-	echo "-6 = DVD Coming soon"
+	echo "-a = Tv Film"
+	echo "-b = Tv Animation"
+	echo "-c = Movie Film"
+	echo "-d = Movie Animation"
+	echo "-e = Android"
+	echo "-f = DVD Coming soon"
 	exit 1;}
 		
 convert() {
@@ -41,36 +41,36 @@ convert() {
 }
 
 
-while getopts ":h:1:2:3:4:5:6:" arg; do
+while getopts ":h:a:b:c:d:e:f:" arg; do
 case $arg in
 	h)
 		usage
 		;;
-	1)
+	a)
 		spath=$tpath
 		cpath=$tcompath
 		preset=$filmpreset
 		convert
 		;;
-	2)
+	b)
 		spath=$tpath
 		cpath=$tcompath
 		preset=$animpreset
 		convert
 		;;
-	3)
+	c)
 		spath=$mpath
 		cpath=$mcompath
 		preset=$filmpreset
 		convert
 		;;
-	4)
+	d)
 		spath=$mpath
 		cpath=$mcompath
 		preset=$animpreset
 		convert
 		;;
-	5)
+	e)
 		spath=$apath
 		cpath=$acompath
 		preset=$androidpreset
