@@ -14,7 +14,7 @@ rm $ppath/Tv/*
 rm $ppath/Movies/*
 rm $ppath/Android/*
 cd $ppath/Tv
-wget -x $conpath/Tv/*
+wget -r  $conpath/Tv/*
 #mv $conpath/Tv/* $ppath/Tv/
 #mv $conpath/Movies/* $ppath/Movies/
 #mv $conpath/Android/* $ppath/Android/
