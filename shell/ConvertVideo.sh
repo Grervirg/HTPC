@@ -11,38 +11,64 @@ apath='/home/grervirg/Videos/Android/'
 filmpreset='--preset=\"Kodi\"'
 animpreset='--preset=\"KodiAnim\"'
 androidpreset='--preset=\"Android\"'
+spath=''
+cpath=''
 
 echo $1
 echo $2
 
-if [$1 -eq "Movies"] 
-then
-	spath=$mpath
-	cpath=$mcompath
-elif [$1 -eq "Tv"] 
-then
-	spath=$tpath
-	cpath=$tcompath
-elif [$1 -eq "Android"] 
-then
-	spath=$apath
-	cpath=$acompath
-else
-	echo "Missing Video Type"
-fi
+while getopts "m:t:a:f:n" arg; do
+case $arg in
+	m)
+		spath=$mpath
+		cpath=$mcompath
+		;;
+	t)
+		spath=$tpath
+		cpath=$tcompath
+		;;
+	a)
+		spath=$apath
+		cpath=$acompath
+		preset=$androidpreset
+		;;
+	f)
+		preset=$filmpreset
+		;;
+	n)
+		preset=$animpreset
+		;;
+	esac
+done
 
-if [$2 = "film"]
-then
-	preset=$filmpreset
-elif [$2 = "anim"]
-then
-	preset=$animpreset
-elif [$2 = "android"]
-then
-	preset=$androidpreset
-else
-	echo "Missing Preset"
-fi
+#if [$1 -eq "Movies"] 
+#then
+#	spath=$mpath
+#	cpath=$mcompath
+#elif [$1 -eq "Tv"] 
+#then
+#	spath=$tpath
+#	cpath=$tcompath
+#elif [$1 -eq "Android"] 
+#then
+#	spath=$apath
+#	cpath=$acompath
+#else
+#	echo "Missing Video Type"
+#fi
+#
+#if [$2 = "film"]
+#then
+#	preset=$filmpreset
+#elif [$2 = "anim"]
+#then
+#	preset=$animpreset
+#elif [$2 = "android"]
+#then
+#	preset=$androidpreset
+#else
+#	echo "Missing Preset"
+#fi
 
 find $spath -iname \*.mkv -exec HandBrakeCLI -i {} -o {}.mkv $preset  _ {} \;
 find $spath -iname \*.avi -exec HandBrakeCLI -i {} -o {}.mkv $preset  _ {} \;
