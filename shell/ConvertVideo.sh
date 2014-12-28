@@ -12,22 +12,22 @@ animpreset='--preset=\"KodiAnim\"'
 androidpreset='--preset=\"Android\"'
 
 
-if [$1 == "Movies"]
+if [$1 == "Movies"]; then
 spath=$mpath
 cpath=$mcompath
-elif [$1 == "Tv"]
+elif [$1 == "Tv"]; then
 spath=$tpath
 cpath=$tcompath
-elif [$1 == "Android"]
+elif [$1 == "Android"]; then
 spath=$apath
 cpath=$acompath
 fi
 
-if [$2 == "film"]
+if [$2 == "film"]; then
 preset=$filmpreset
-elif [$2 == "anim"]
+elif [$2 == "anim"]; then
 preset=$animpreset
-elif [$2 == "android"]
+elif [$2 == "android"]; then
 preset=$androidpreset
 fi
 
