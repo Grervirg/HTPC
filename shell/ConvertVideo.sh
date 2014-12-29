@@ -7,7 +7,7 @@ acompath='/home/grervirg/Videos/Complete/Android/'
 mpath='/home/grervirg/Videos/Movies/'
 tpath='/home/grervirg/Videos/Tv/'
 apath='/home/grervirg/Videos/Android/'
-dpath='/home/grervirg/Videos/Dvd/
+dpath='/home/grervirg/Videos/Dvd/'
 
 filmpreset='--preset=\"Kodi\"'
 animpreset='--preset=\"KodiAnim\"'
@@ -41,7 +41,7 @@ convert() {
 	
 }
 
-
+dvdconvert(){}
 
 
 while getopts ":habcdef:" arg; do
