@@ -7,10 +7,11 @@ acompath='/home/grervirg/Videos/Complete/Android/'
 mpath='/home/grervirg/Videos/Movies/'
 tpath='/home/grervirg/Videos/Tv/'
 apath='/home/grervirg/Videos/Android/'
+dpath='/home/grervirg/Videos/Dvd/
 
 filmpreset='--preset=\"Kodi\"'
 animpreset='--preset=\"KodiAnim\"'
-androidpreset='--preset=\"Android\"'
+androidpreset='--preset=\"ndroid\"'
 
 usage() {
 	echo "Usage: $0 [option]"
@@ -29,15 +30,19 @@ convert() {
 	find $spath -iname \*.mkv -exec HandBrakeCLI -i {} -o {}.mkv $preset  _ {} \;
 	find $spath -iname \*.avi -exec HandBrakeCLI -i {} -o {}.mkv $preset  _ {} \;
 	find $spath -iname \*.mp4 -exec HandBrakeCLI -i {} -o {}.mkv $preset  _ {} \;
-	cd $spath
-	mv *.mkv.mkv $cpath
-	mv *.avi.mkv $cpath
-	mv *.mp4.mkv $cpath
+	
+	find $spath -name *.mkv.mkv -exec mv {} $cpath \;
+	find $spath -name *.avi.mkv -exec mv {} $cpath \;
+	find $spath -name *.mp4.mkv -exec mv {} $cpath \;
 	cd $cpath
 	rename -v 's/\.mkv.mkv$/\.mkv/' *.mkv
 	rename -v 's/\.avi.mkv$/\.mkv/' *.mkv
 	rename -v 's/\.mp4.mkv$/\.mkv/' *.mkv
 	
+}
+
+dvdcreate() {
+	ffmpeg -i infile -filter:v "scale='if(gt(a,720/480),720,-1)':'if(gt(a,720/480),-1,480)',pad=w=720:h=480:x=(ow-iw)/2:y=(oh-ih)/2" -target ntsc-dvd out.mpg
 }
 
 
