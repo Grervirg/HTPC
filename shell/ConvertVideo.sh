@@ -1,6 +1,10 @@
 #!/bin/sh
-t=$1
-p=$2
+ 
+
+itpath='/media/MediaProcess/Tv'
+impath='/media/MediaProcess/Movies'
+iapath='/media/MediaProcess/Android'
+ 
 mcompath='/home/grervirg/Videos/Complete/Movies/'
 tcompath='/home/grervirg/Videos/Complete/Tv/'
 acompath='/home/grervirg/Videos/Complete/Android/'
@@ -10,6 +14,9 @@ apath='/home/grervirg/Videos/Android/'
 dpath='/home/grervirg/Videos/Dvd/'
 dtpath='/home/grervirg/Videos/dvdtmp/'
 dcompath='/home/grervirg/Videos/Complete/DVD/'
+rmcompath='/media/downloads/Complete/movies/'
+rtcompath='/media/downloads/Complete/tv/'
+racompath='/media/downloads/Complete/android/'
 
 filmpreset='--preset=\"Kodi\"'
 animpreset='--preset=\"KodiAnim\"'
@@ -26,6 +33,8 @@ usage() {
 	exit 1;}
 		
 convert() {
+	
+	rsync -rvs --progress $ipath/* $spath
 	echo $spath
 	echo $cpath
 	echo $preset
@@ -40,10 +49,14 @@ convert() {
 	rename -v 's/\.mkv.mkv$/\.mkv/' *.mkv
 	rename -v 's/\.avi.mkv$/\.mkv/' *.mkv
 	rename -v 's/\.mp4.mkv$/\.mkv/' *.mkv
+	rsync -rvS --progress $cpath/* $rpath
+	rm -rfv $spath/*
 	
 }
 
 convertandroid() {
+
+	rsync -rvs --progress $ipath/* $spath
 	echo $spath
 	echo $cpath
 	echo $preset
@@ -58,6 +71,8 @@ convertandroid() {
 	rename -v 's/\.mkv.mp4$/\.mp4/' *.mp4
 	rename -v 's/\.avi.mp4$/\.mp4/' *.mp4
 	rename -v 's/\.mp4.mp4$/\.mp4/' *.mp4
+	rsync -rvS --progress $cpath/* $rpath
+	rm -rfv $spath/*
 	
 }
 
@@ -76,30 +91,40 @@ case $arg in
 	a)
 		spath=$tpath
 		cpath=$tcompath
+		rpath=$rtcompath
+		ipath=$itpath
 		preset=$filmpreset
 		convert
 		;;
 	b)
 		spath=$tpath
 		cpath=$tcompath
+		rpath=$rtcompath
+		ipath=$itpath
 		preset=$animpreset
 		convert
 		;;
 	c)
 		spath=$mpath
 		cpath=$mcompath
+		rpath=$rmcompath
+		ipath=$impath
 		preset=$filmpreset
 		convert
 		;;
 	d)
 		spath=$mpath
 		cpath=$mcompath
+		rpath=$rmcompath
+		ipath=$impath
 		preset=$animpreset
 		convert
 		;;
 	e)
 		spath=$apath
 		cpath=$acompath
+		rpath=$acompath
+		ipath=$iapath
 		preset=$androidpreset
 		convertandroid
 		;;
