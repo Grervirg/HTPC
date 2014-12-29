@@ -41,9 +41,7 @@ convert() {
 	
 }
 
-#dvdcreate() {
-	#ffmpeg -i infile -filter:v "scale='if(gt(a,720/480),720,-1)':'if(gt(a,720/480),-1,480)',pad=w=720:h=480:x=(ow-iw)/2:y=(oh-ih)/2" -target ntsc-dvd out.mpg
-#}
+
 
 
 while getopts ":habcdef:" arg; do
