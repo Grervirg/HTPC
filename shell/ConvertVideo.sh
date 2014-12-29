@@ -8,6 +8,8 @@ mpath='/home/grervirg/Videos/Movies/'
 tpath='/home/grervirg/Videos/Tv/'
 apath='/home/grervirg/Videos/Android/'
 dpath='/home/grervirg/Videos/Dvd/'
+dtpath='/home/grervirg/Videos/dvdtmp/'
+dcompath='/home/grervirg/Videos/Complete/DVD/'
 
 filmpreset='--preset=\"Kodi\"'
 animpreset='--preset=\"KodiAnim\"'
@@ -41,7 +43,29 @@ convert() {
 	
 }
 
-dvdconvert(){}
+convertandroid() {
+	echo $spath
+	echo $cpath
+	echo $preset
+	find $spath -iname \*.mkv -exec HandBrakeCLI -i {} -o {}.mp4 $preset -w 480 _ {} \;
+	find $spath -iname \*.avi -exec HandBrakeCLI -i {} -o {}.mp4 $preset -w 480 _ {} \;
+	find $spath -iname \*.mp4 -exec HandBrakeCLI -i {} -o {}.mp4 $preset -w 480 _ {} \;
+	
+	find $spath -name *.mkv.mp4 -exec mv {} $cpath \;
+	find $spath -name *.avi.mp4 -exec mv {} $cpath \;
+	find $spath -name *.mp4.mp4 -exec mv {} $cpath \;
+	cd $cpath
+	rename -v 's/\.mkv.mp4$/\.mp4/' *.mp4
+	rename -v 's/\.avi.mp4$/\.mp4/' *.mp4
+	rename -v 's/\.mp4.mp4$/\.mp4/' *.mp4
+	
+}
+
+dvdconvert(){
+ffmpeg -i $dpath/*.* -filter:v "scale='if(gt(a,720/480),720,-1)':'if(gt(a,720/480),-1,480)',pad=w=720:h=480:x=(ow-iw)/2:y=(oh-ih)/2" -target ntsc-dvd $dtpath/out.mpg
+dvdauthor --title -o $dcompath -f $dtpath out.mpg
+dvdauthor -T -o $dcompath
+}
 
 
 while getopts ":habcdef:" arg; do
@@ -77,7 +101,7 @@ case $arg in
 		spath=$apath
 		cpath=$acompath
 		preset=$androidpreset
-		convert
+		convertandroid
 		;;
 	*)
 		usage
