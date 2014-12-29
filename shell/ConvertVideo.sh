@@ -85,7 +85,3 @@ case $arg in
 	esac
 done
 
-
-echo $args
-
-
