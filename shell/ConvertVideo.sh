@@ -35,9 +35,9 @@ usage() {
 convert() {
 	
 	#rsync -rvs --progress $ipath/* $spath
-	find $ipath -name \*.mkv -exec pv {} $spath
-	find $ipath -name \*.avi -exec pv {} $spath
-	find $ipath -name \*.mp4 -exec pv {} $spath
+	find $ipath -name \*.mkv -exec pv {} $spath \;
+	find $ipath -name \*.avi -exec pv {} $spath \;
+	find $ipath -name \*.mp4 -exec pv {} $spath \;
 	rm -rfv $ipath/*
 	echo $spath
 	echo $cpath
@@ -53,7 +53,7 @@ convert() {
 	rename -v 's/\.mkv.mkv$/\.mkv/' *.mkv
 	rename -v 's/\.avi.mkv$/\.mkv/' *.mkv
 	rename -v 's/\.mp4.mkv$/\.mkv/' *.mkv
-	find $cpath -name \*.mkv -exec pv {} $rpath
+	find $cpath -name \*.mkv -exec pv {} $rpath \;
 	#rsync -rvS --progress $cpath/* $rpath
 	rm -rfv $spath/*
 	
