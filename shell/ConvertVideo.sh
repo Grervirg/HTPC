@@ -35,10 +35,7 @@ usage() {
 convert() {
 	
 	#rsync -rvs --progress $ipath/* $spath
-	find $ipath -name \*.mkv -exec pv {} $spath \;
-	find $ipath -name \*.avi -exec pv {} $spath \;
-	find $ipath -name \*.mp4 -exec pv {} $spath \;
-	rm -rfv $ipath/*
+	
 	echo $spath
 	echo $cpath
 	echo $preset
@@ -46,14 +43,14 @@ convert() {
 	find $spath -iname \*.avi -exec HandBrakeCLI -i {} -o {}.mkv $preset  _ {} \;
 	find $spath -iname \*.mp4 -exec HandBrakeCLI -i {} -o {}.mkv $preset  _ {} \;
 	
-	find $spath -name *.mkv.mkv -exec pv {} $cpath \;
-	find $spath -name *.avi.mkv -exec pv {} $cpath \;
-	find $spath -name *.mp4.mkv -exec pv {} $cpath \;
+	find $spath -name *.mkv.mkv -exec mv {} $cpath \;
+	find $spath -name *.avi.mkv -exec mv {} $cpath \;
+	find $spath -name *.mp4.mkv -exec mv {} $cpath \;
 	cd $cpath
 	rename -v 's/\.mkv.mkv$/\.mkv/' *.mkv
 	rename -v 's/\.avi.mkv$/\.mkv/' *.mkv
 	rename -v 's/\.mp4.mkv$/\.mkv/' *.mkv
-	find $cpath -name \*.mkv -exec pv {} $rpath \;
+	find $cpath -name \*.mkv -exec mv {} $rpath \;
 	#rsync -rvS --progress $cpath/* $rpath
 	rm -rfv $spath/*
 	
@@ -61,9 +58,7 @@ convert() {
 
 convertandroid() {
 
-	find $ipath -name \*.mkv -exec pv {} $spath
-	find $ipath -name \*.avi -exec pv {} $spath
-	find $ipath -name \*.mp4 -exec pv {} $spath
+	
 	echo $spath
 	echo $cpath
 	echo $preset
@@ -71,14 +66,14 @@ convertandroid() {
 	find $spath -iname \*.avi -exec HandBrakeCLI -i {} -o {}.mp4 $preset -w 480 _ {} \;
 	find $spath -iname \*.mp4 -exec HandBrakeCLI -i {} -o {}.mp4 $preset -w 480 _ {} \;
 	
-	find $spath -name *.mkv.mp4 -exec pv {} $cpath \;
-	find $spath -name *.avi.mp4 -exec pv {} $cpath \;
-	find $spath -name *.mp4.mp4 -exec pv {} $cpath \;
+	find $spath -name *.mkv.mp4 -exec mv {} $cpath \;
+	find $spath -name *.avi.mp4 -exec mv {} $cpath \;
+	find $spath -name *.mp4.mp4 -exec mv {} $cpath \;
 	cd $cpath
 	rename -v 's/\.mkv.mp4$/\.mp4/' *.mp4
 	rename -v 's/\.avi.mp4$/\.mp4/' *.mp4
 	rename -v 's/\.mp4.mp4$/\.mp4/' *.mp4
-	find $cpath -name \*.mkv -exec pv {} $rpath
+	find $cpath -name \*.mkv -exec mv {} $rpath \;
 	rm -rfv $spath/*
 	
 }
