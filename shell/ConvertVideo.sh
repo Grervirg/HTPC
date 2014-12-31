@@ -8,9 +8,9 @@ iapath='/media/MediaProcess/Android'
 mcompath='/home/grervirg/Videos/Complete/Movies/'
 tcompath='/home/grervirg/Videos/Complete/Tv/'
 acompath='/home/grervirg/Videos/Complete/Android/'
-mpath='/home/grervirg/Videos/Movies/'
-tpath='/home/grervirg/Videos/Tv/'
-apath='/home/grervirg/Videos/Android/'
+mpath=$impath#'/home/grervirg/Videos/Movies/'
+tpath=$itpath#'/home/grervirg/Videos/Tv/'
+apath=$iapath#'/home/grervirg/Videos/Android/'
 dpath='/home/grervirg/Videos/Dvd/'
 dtpath='/home/grervirg/Videos/dvdtmp/'
 dcompath='/home/grervirg/Videos/Complete/DVD/'
@@ -50,8 +50,7 @@ convert() {
 	rename -v 's/\.mkv.mkv$/\.mkv/' *.mkv
 	rename -v 's/\.avi.mkv$/\.mkv/' *.mkv
 	rename -v 's/\.mp4.mkv$/\.mkv/' *.mkv
-	find $cpath -name \*.mkv -exec mv {} $rpath \;
-	#rsync -rvS --progress $cpath/* $rpath
+	
 	rm -rfv $spath/*
 	
 }
@@ -73,7 +72,7 @@ convertandroid() {
 	rename -v 's/\.mkv.mp4$/\.mp4/' *.mp4
 	rename -v 's/\.avi.mp4$/\.mp4/' *.mp4
 	rename -v 's/\.mp4.mp4$/\.mp4/' *.mp4
-	find $cpath -name \*.mkv -exec mv {} $rpath \;
+	
 	rm -rfv $spath/*
 	
 }
