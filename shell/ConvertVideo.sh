@@ -42,17 +42,17 @@ convert() {
 	echo $spath
 	echo $cpath
 	echo $preset
-	find $spath -iname \*.mkv -exec HandBrakeCLI -i {} -o $cpath/{%f}.mkv $preset  _ {} \;
-	find $spath -iname \*.avi -exec HandBrakeCLI -i {} -o $cpath/{%f}.mkv $preset  _ {} \;
-	find $spath -iname \*.mp4 -exec HandBrakeCLI -i {} -o $cpath/{%f}.mkv $preset  _ {} \;
+	find $spath -iname \*.mkv -exec HandBrakeCLI -i {} -o $cpath/'{print %f}'.mkv $preset  _ {} \;
+	find $spath -iname \*.avi -exec HandBrakeCLI -i {} -o $cpath/'{print %f}'.mkv $preset  _ {} \;
+	find $spath -iname \*.mp4 -exec HandBrakeCLI -i {} -o $cpath/'{print %f}'.mkv $preset  _ {} \;
 	
 	#find $spath -name *.mkv.mkv -exec mv {} $cpath \;
 	#find $spath -name *.avi.mkv -exec mv {} $cpath \;
 	#find $spath -name *.mp4.mkv -exec mv {} $cpath \;
 	#cd $cpath
-	rename -v 's/\.mkv.mkv$/\.mkv/' *.mkv
-	rename -v 's/\.avi.mkv$/\.mkv/' *.mkv
-	rename -v 's/\.mp4.mkv$/\.mkv/' *.mkv
+	#rename -v 's/\.mkv.mkv$/\.mkv/' *.mkv
+	#rename -v 's/\.avi.mkv$/\.mkv/' *.mkv
+	#rename -v 's/\.mp4.mkv$/\.mkv/' *.mkv
 	find $spath -name *.mkv -exec mv {} $rpath \;
 	rm -rfv $spath/*
 	
