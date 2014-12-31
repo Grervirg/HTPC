@@ -8,9 +8,12 @@ iapath='/media/MediaProcess/Android'
 mcompath='/home/grervirg/Videos/Complete/Movies/'
 tcompath='/home/grervirg/Videos/Complete/Tv/'
 acompath='/home/grervirg/Videos/Complete/Android/'
-mpath=$impath#'/home/grervirg/Videos/Movies/'
-tpath=$itpath#'/home/grervirg/Videos/Tv/'
-apath=$iapath#'/home/grervirg/Videos/Android/'
+mpath=$impath 
+#'/home/grervirg/Videos/Movies/'
+tpath=$itpath
+#'/home/grervirg/Videos/Tv/'
+apath=$iapath
+#'/home/grervirg/Videos/Android/'
 dpath='/home/grervirg/Videos/Dvd/'
 dtpath='/home/grervirg/Videos/dvdtmp/'
 dcompath='/home/grervirg/Videos/Complete/DVD/'
