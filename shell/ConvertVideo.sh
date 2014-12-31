@@ -42,9 +42,9 @@ convert() {
 	echo $spath
 	echo $cpath
 	echo $preset
-	find $spath -iname \*.mkv -exec HandBrakeCLI -i {} -o $cpath{}.mkv $preset  _ {} \;
-	find $spath -iname \*.avi -exec HandBrakeCLI -i {} -o $cpath{}.mkv $preset  _ {} \;
-	find $spath -iname \*.mp4 -exec HandBrakeCLI -i {} -o $cpath{}.mkv $preset  _ {} \;
+	find $spath -iname \*.mkv -exec HandBrakeCLI -i {} -o $cpath'{}'.mkv $preset  _ {} \;
+	find $spath -iname \*.avi -exec HandBrakeCLI -i {} -o $cpath'{}'.mkv $preset  _ {} \;
+	find $spath -iname \*.mp4 -exec HandBrakeCLI -i {} -o $cpath'{}'.mkv $preset  _ {} \;
 	
 	#find $spath -name *.mkv.mkv -exec mv {} $cpath \;
 	#find $spath -name *.avi.mkv -exec mv {} $cpath \;
